@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0053)file:///C:/Users/daniel.possi/Downloads/index_79.html -->
+<!-- saved from url=(0053)file:///C:/Users/daniel.possi/Downloads/index_51.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -374,17 +374,28 @@ footer {
 /* Grade de cards TV */
 .tv-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+  height: calc(100vh - 110px);
 }
 .tv-card {
   background: var(--bg1);
   border: 2px solid var(--bord);
   border-radius: 12px;
-  padding: 16px 18px;
+  padding: 14px 16px;
   position: relative;
   overflow: hidden;
   transition: border-color .2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 0;
+}
+.tv-card-empty {
+  border-radius: 12px;
+  border: 1px dashed rgba(255,255,255,.06);
+  background: rgba(255,255,255,.01);
 }
 .tv-card::before {
   content: '';
@@ -401,20 +412,21 @@ footer {
 .tv-card.sem  { border-color: var(--bord); }
 .tv-card.sem::before  { background: var(--muted); }
 
-.tv-card-cod  { font-size: 15px; font-weight: 700; color: var(--text); font-family: 'Consolas', monospace; margin-bottom: 4px; }
+.tv-card-cod  { font-size: 20px; font-weight: 800; color: var(--text); font-family: 'Consolas', monospace; text-align: center; padding-bottom: 10px; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.12); letter-spacing: 0.5px; }
 .tv-card-desc { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.tv-card-preco-garden { font-size: 22px; font-weight: 800; color: var(--blue); margin-bottom: 10px; }
+.tv-card-preco-garden { font-size: 26px; font-weight: 800; color: var(--blue); margin-bottom: 10px; text-align: center; }
 .tv-card-concorrentes { display: flex; flex-direction: column; gap: 6px; }
 .tv-conc-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
   align-items: center;
-  justify-content: space-between;
+  gap: 6px;
   background: var(--bg2);
   border-radius: 6px;
   padding: 5px 10px;
 }
-.tv-conc-nome { font-size: 11px; color: var(--muted); font-weight: 600; }
-.tv-conc-preco { font-size: 13px; font-weight: 700; }
+.tv-conc-nome { font-size: 11px; color: var(--muted); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tv-conc-preco { font-size: 13px; font-weight: 700; text-align: center; }
 .tv-conc-dif {
   font-size: 11px;
   font-weight: 700;
@@ -427,7 +439,7 @@ footer {
 .tv-sem-label { font-size: 12px; color: var(--hint); font-style: italic; }
 
 /* Ticker rodapé TV */
-.tv-ticker {
+.tv-ticker { display: none !important;
   position: fixed;
   bottom: 0; left: 0; right: 0;
   background: var(--bg1);
@@ -471,7 +483,7 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
   td { padding: 13px 12px; }
   .td-prc, .td-prc-c { font-size: 17px; }
   .tv-grid { grid-template-columns: repeat(5, 1fr); }
-  .tv-card-preco-garden { font-size: 26px; }
+  .tv-card-preco-garden { font-size: 30px; }
 }
 
 /* ══════════════════════════════════════════════
@@ -643,6 +655,7 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
       <button class="mode-tab" id="tab-construja" onclick="setMode(&#39;construja&#39;)">🏗️ ConstruJá</button>
     </div>
     <button class="btn-refresh" id="btn-cfg" onclick="abrirConfig()" title="Configurar produtos do Modo TV">⚙ Config TV</button>
+    <button class="btn-refresh" id="btn-fullscreen" onclick="toggleFullscreen()" title="Tela cheia">⛶</button>
     <span><span class="dot"></span>ao vivo</span>
     <span class="pill" id="pill-tot">126 produtos</span>
     <span class="pill" id="pill-data">22/05/2026, 14:05</span>
@@ -2355,12 +2368,12 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
         <span style="font-size:24px">🏪</span>
         <div>
           <div class="tv-title" style="color:#4a8ff7">Cofema</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:2px">Produtos selecionados no Modo TV</div>
+
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:20px;">
         <div style="display:flex;gap:14px;font-size:13px;">
-          <span style="color:#22c47d">✅ 11</span>
+          <span style="color:#22c47d">✅ 13</span>
           <span style="color:#f05252">⚠️ 3</span>
           <span style="color:var(--muted)">➖ 0</span>
           
@@ -2370,7 +2383,6 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
     </div>
     <div class="tv-grid"><div class="tv-card win">
         <div class="tv-card-cod">10351ZPE</div>
-        <div class="tv-card-desc" title="TORN BOIA GARDEN  3/4ZAMAC LEVE">TORN BOIA GARDEN  3/4ZAMAC LEVE</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;15,99</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#64b5f6">ZB</span>
@@ -2378,7 +2390,6 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
             <span class="tv-conc-dif win">▼ 7.8%</span>
           </div></div></div><div class="tv-card win">
         <div class="tv-card-cod">10351ZPRE</div>
-        <div class="tv-card-desc" title="TORN BOIA GARDEN  3/4ZAMAC REFORCADA">TORN BOIA GARDEN  3/4ZAMAC REFORCADA</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;19,99</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#64b5f6">ZB</span>
@@ -2386,15 +2397,20 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
             <span class="tv-conc-dif win">▼ 9.8%</span>
           </div></div></div><div class="tv-card win">
         <div class="tv-card-cod">10840E</div>
-        <div class="tv-card-desc" title="JUNCAO METAL GARDEN P/MAQ.LAVAR">JUNCAO METAL GARDEN P/MAQ.LAVAR</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;16,49</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
             <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;23,50</span>
             <span class="tv-conc-dif win">▼ 29.8%</span>
           </div></div></div><div class="tv-card win">
+        <div class="tv-card-cod">10870E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;14,94</div>
+        <div class="tv-card-concorrentes"><div class="tv-conc-row">
+            <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;22,10</span>
+            <span class="tv-conc-dif win">▼ 32.4%</span>
+          </div></div></div><div class="tv-card win">
         <div class="tv-card-cod">10857E</div>
-        <div class="tv-card-desc" title="AUMENTO TORN.GARDEN ZAM.AM.1/2(A)CT">AUMENTO TORN.GARDEN ZAM.AM.1/2(A)CT</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;4,22</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
@@ -2402,7 +2418,6 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
             <span class="tv-conc-dif win">▼ 38.3%</span>
           </div></div></div><div class="tv-card win">
         <div class="tv-card-cod">10858E</div>
-        <div class="tv-card-desc" title="AUMENTO TORN.GARDEN ZAM.AM.1/2(B)MD">AUMENTO TORN.GARDEN ZAM.AM.1/2(B)MD</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;4,97</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
@@ -2410,90 +2425,88 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
             <span class="tv-conc-dif win">▼ 41.7%</span>
           </div></div></div><div class="tv-card win">
         <div class="tv-card-cod">10859E</div>
-        <div class="tv-card-desc" title="AUMENTO TORN.GARDEN ZAM.AM.1/2(C)LG">AUMENTO TORN.GARDEN ZAM.AM.1/2(C)LG</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;6,48</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
             <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;10,64</span>
             <span class="tv-conc-dif win">▼ 39.1%</span>
           </div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">10860E</div>
-        <div class="tv-card-desc" title="AUMENTO TORN.GARDEN ZAM.AM.3/4(A)CT">AUMENTO TORN.GARDEN ZAM.AM.3/4(A)CT</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;4,99</div>
+        <div class="tv-card-cod">11850E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;7,12</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;10,42</span>
-            <span class="tv-conc-dif win">▼ 52.1%</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;9,72</span>
+            <span class="tv-conc-dif win">▼ 26.7%</span>
           </div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">10861E</div>
-        <div class="tv-card-desc" title="AUMENTO TORN.GARDEN ZAM.AM.3/4(B)MD">AUMENTO TORN.GARDEN ZAM.AM.3/4(B)MD</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;5,42</div>
+        <div class="tv-card-cod">11851E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;8,44</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;11,88</span>
-            <span class="tv-conc-dif win">▼ 54.4%</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;13,34</span>
+            <span class="tv-conc-dif win">▼ 36.7%</span>
           </div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">10862E</div>
-        <div class="tv-card-desc" title="AUMENTO TORN.GARDEN ZAM.AM.3/4(C)LG">AUMENTO TORN.GARDEN ZAM.AM.3/4(C)LG</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;7,90</div>
+        <div class="tv-card-cod">11852E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;10,06</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;16,47</span>
-            <span class="tv-conc-dif win">▼ 52.0%</span>
-          </div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">10870E</div>
-        <div class="tv-card-desc" title="JUNCAO METAL GARDEN Y P/FILTRO 1/2">JUNCAO METAL GARDEN Y P/FILTRO 1/2</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;14,94</div>
-        <div class="tv-card-concorrentes"><div class="tv-conc-row">
-            <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;22,10</span>
-            <span class="tv-conc-dif win">▼ 32.4%</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;16,09</span>
+            <span class="tv-conc-dif win">▼ 37.5%</span>
           </div></div></div><div class="tv-card loss">
         <div class="tv-card-cod">11701TG</div>
-        <div class="tv-card-desc" title="ESGUICHO REV.GARDEN 1/2TRAD. 1170">ESGUICHO REV.GARDEN 1/2TRAD. 1170</div>
         <div class="tv-card-preco-garden" style="color:#f05252">R$&nbsp;25,90</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f0a030">FICO</span>
             <span class="tv-conc-preco" style="color:#4a8ff7">R$&nbsp;24,40</span>
             <span class="tv-conc-dif loss">▲ 6.1%</span>
-          </div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">11833G</div>
-        <div class="tv-card-desc" title="UNIAO ZAMAC GARDEN 3/4x1/2 P/TORN.">UNIAO ZAMAC GARDEN 3/4x1/2 P/TORN.</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;2,69</div>
+          </div></div></div><div class="tv-card loss">
+        <div class="tv-card-cod">12701G</div>
+        <div class="tv-card-preco-garden" style="color:#f05252">R$&nbsp;8,92</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
-            <span class="tv-conc-nome" style="color:#f0a030">FICO</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;2,85</span>
-            <span class="tv-conc-dif win">▼ 5.6%</span>
+            <span class="tv-conc-nome" style="color:#64b5f6">MACLOREN</span>
+            <span class="tv-conc-preco" style="color:#4a8ff7">R$&nbsp;6,99</span>
+            <span class="tv-conc-dif loss">▲ 27.6%</span>
+          </div></div></div><div class="tv-card win">
+        <div class="tv-card-cod">10856E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;4,14</div>
+        <div class="tv-card-concorrentes"><div class="tv-conc-row">
+            <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;6,74</span>
+            <span class="tv-conc-dif win">▼ 38.6%</span>
+          </div></div></div><div class="tv-card win">
+        <div class="tv-card-cod">10863E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;6,86</div>
+        <div class="tv-card-concorrentes"><div class="tv-conc-row">
+            <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;11,44</span>
+            <span class="tv-conc-dif win">▼ 40.0%</span>
           </div></div></div><div class="tv-card loss">
         <div class="tv-card-cod">11832G</div>
-        <div class="tv-card-desc" title="UNIAO ZAMAC GARDEN 1/2x1/2 P/TORN.">UNIAO ZAMAC GARDEN 1/2x1/2 P/TORN.</div>
         <div class="tv-card-preco-garden" style="color:#f05252">R$&nbsp;2,58</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f0a030">FICO</span>
             <span class="tv-conc-preco" style="color:#4a8ff7">R$&nbsp;2,37</span>
             <span class="tv-conc-dif loss">▲ 8.9%</span>
-          </div></div></div><div class="tv-card loss">
-        <div class="tv-card-cod">11834G</div>
-        <div class="tv-card-desc" title="UNIAO ZAMAC GARDEN 3/4x3/4 P/TORN.">UNIAO ZAMAC GARDEN 3/4x3/4 P/TORN.</div>
-        <div class="tv-card-preco-garden" style="color:#f05252">R$&nbsp;3,24</div>
+          </div></div></div><div class="tv-card win">
+        <div class="tv-card-cod">11833G</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;2,69</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f0a030">FICO</span>
-            <span class="tv-conc-preco" style="color:#4a8ff7">R$&nbsp;3,05</span>
-            <span class="tv-conc-dif loss">▲ 6.2%</span>
-          </div></div></div></div></div><div class="tv-slide" id="tvslide-1" style="display: none; padding: 0px 28px 20px;">
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;2,85</span>
+            <span class="tv-conc-dif win">▼ 5.6%</span>
+          </div></div></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div></div></div><div class="tv-slide" id="tvslide-1" style="display: none; padding: 0px 28px 20px;">
     <div class="tv-header-bar" style="border-bottom:2px solid #e0303033;margin-bottom:16px;">
       <div style="display:flex;align-items:center;gap:14px;">
         <span style="font-size:24px">⚡</span>
         <div>
           <div class="tv-title" style="color:#e03030">Eletroleste</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:2px">Produtos selecionados no Modo TV</div>
+
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:20px;">
         <div style="display:flex;gap:14px;font-size:13px;">
-          <span style="color:#22c47d">✅ 4</span>
-          <span style="color:#f05252">⚠️ 2</span>
-          <span style="color:var(--muted)">➖ 1</span>
+          <span style="color:#22c47d">✅ 3</span>
+          <span style="color:#f05252">⚠️ 4</span>
+          <span style="color:var(--muted)">➖ 0</span>
           <span style="color:#f0a030">📦 5</span>
         </div>
         <div class="tv-stamp">Atualizado: 11/05/2026, 15:32</div>
@@ -2501,11 +2514,9 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
     </div>
     <div class="tv-grid"><div class="tv-card sem">
         <div class="tv-card-cod">10351ZPE</div>
-        <div class="tv-card-desc" title="TORN BOIA GARDEN  3/4ZAMAC LEVE">TORN BOIA GARDEN  3/4ZAMAC LEVE</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;14,99</div>
         <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card loss">
         <div class="tv-card-cod">10351ZPRE</div>
-        <div class="tv-card-desc" title="TORN BOIA GARDEN  3/4ZAMAC REFORCADA">TORN BOIA GARDEN  3/4ZAMAC REFORCADA</div>
         <div class="tv-card-preco-garden" style="color:#f05252">R$&nbsp;18,59</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#22c47d">ZB</span>
@@ -2513,11 +2524,12 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
             <span class="tv-conc-dif loss">▲ 6.1%</span>
           </div></div></div><div class="tv-card sem">
         <div class="tv-card-cod">10840E</div>
-        <div class="tv-card-desc" title="JUNCAO METAL GARDEN P/MAQ.LAVAR">JUNCAO METAL GARDEN P/MAQ.LAVAR</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;14,52</div>
+        <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card sem">
+        <div class="tv-card-cod">10870E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;13,36</div>
         <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card win">
         <div class="tv-card-cod">10857E</div>
-        <div class="tv-card-desc" title="AUMENTO TORN.GARDEN ZAM.AM.1/2(A)CT">AUMENTO TORN.GARDEN ZAM.AM.1/2(A)CT</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;3,76</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
@@ -2529,7 +2541,6 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
             <span class="tv-conc-dif win">▼ 11.1%</span>
           </div></div></div><div class="tv-card win">
         <div class="tv-card-cod">10858E</div>
-        <div class="tv-card-desc" title="AUMENTO TORN.GARDEN ZAM.AM.1/2(B)MD">AUMENTO TORN.GARDEN ZAM.AM.1/2(B)MD</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;4,44</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
@@ -2541,7 +2552,6 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
             <span class="tv-conc-dif win">▼ 14.9%</span>
           </div></div></div><div class="tv-card loss">
         <div class="tv-card-cod">10859E</div>
-        <div class="tv-card-desc" title="AUMENTO TORN.GARDEN ZAM.AM.1/2(C)LG">AUMENTO TORN.GARDEN ZAM.AM.1/2(C)LG</div>
         <div class="tv-card-preco-garden" style="color:#f05252">R$&nbsp;5,79</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
@@ -2551,80 +2561,86 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
             <span class="tv-conc-nome" style="color:#f0a030">SEA</span>
             <span class="tv-conc-preco" style="color:#4a8ff7">R$&nbsp;5,74</span>
             <span class="tv-conc-dif loss">▲ 0.9%</span>
-          </div></div></div><div class="tv-card tie">
-        <div class="tv-card-cod">10860E</div>
-        <div class="tv-card-desc" title="AUMENTO TORN.GARDEN ZAM.AM.3/4(A)CT">AUMENTO TORN.GARDEN ZAM.AM.3/4(A)CT</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">—</div>
-        <div class="tv-card-concorrentes"><div class="tv-conc-row">
-            <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
-            <span class="tv-conc-preco" style="color:var(--text)">R$&nbsp;10,83</span>
-            <span class="tv-conc-dif tie">= Igual</span>
           </div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">10861E</div>
-        <div class="tv-card-desc" title="AUMENTO TORN.GARDEN ZAM.AM.3/4(B)MD">AUMENTO TORN.GARDEN ZAM.AM.3/4(B)MD</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;4,76</div>
+        <div class="tv-card-cod">11850E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;6,37</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;12,34</span>
-            <span class="tv-conc-dif win">▼ 61.4%</span>
-          </div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">10862E</div>
-        <div class="tv-card-desc" title="AUMENTO TORN.GARDEN ZAM.AM.3/4(C)LG">AUMENTO TORN.GARDEN ZAM.AM.3/4(C)LG</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;6,81</div>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;8,81</span>
+            <span class="tv-conc-dif win">▼ 27.7%</span>
+          </div><div class="tv-conc-row">
+            <span class="tv-conc-nome" style="color:#f0a030">SEA</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;6,84</span>
+            <span class="tv-conc-dif win">▼ 6.9%</span>
+          </div></div></div><div class="tv-card loss">
+        <div class="tv-card-cod">11851E</div>
+        <div class="tv-card-preco-garden" style="color:#f05252">R$&nbsp;7,55</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;17,18</span>
-            <span class="tv-conc-dif win">▼ 60.4%</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;14,05</span>
+            <span class="tv-conc-dif win">▼ 46.3%</span>
+          </div><div class="tv-conc-row">
+            <span class="tv-conc-nome" style="color:#f0a030">SEA</span>
+            <span class="tv-conc-preco" style="color:#4a8ff7">R$&nbsp;7,45</span>
+            <span class="tv-conc-dif loss">▲ 1.3%</span>
+          </div></div></div><div class="tv-card loss">
+        <div class="tv-card-cod">11852E</div>
+        <div class="tv-card-preco-garden" style="color:#f05252">R$&nbsp;9,00</div>
+        <div class="tv-card-concorrentes"><div class="tv-conc-row">
+            <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;17,00</span>
+            <span class="tv-conc-dif win">▼ 47.1%</span>
+          </div><div class="tv-conc-row">
+            <span class="tv-conc-nome" style="color:#f0a030">SEA</span>
+            <span class="tv-conc-preco" style="color:#4a8ff7">R$&nbsp;8,07</span>
+            <span class="tv-conc-dif loss">▲ 11.5%</span>
           </div></div></div><div class="tv-card sem">
-        <div class="tv-card-cod">10870E</div>
-        <div class="tv-card-desc" title="JUNCAO METAL GARDEN Y P/FILTRO 1/2">JUNCAO METAL GARDEN Y P/FILTRO 1/2</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;13,36</div>
-        <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card sem">
         <div class="tv-card-cod">11701TG</div>
-        <div class="tv-card-desc" title="ESGUICHO REV.GARDEN 1/2TRAD. 1170">ESGUICHO REV.GARDEN 1/2TRAD. 1170</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;22,19</div>
         <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card sem">
         <div class="tv-card-cod">11833G</div>
-        <div class="tv-card-desc" title="UNIAO ZAMAC GARDEN 3/4x1/2 P/TORN.">UNIAO ZAMAC GARDEN 3/4x1/2 P/TORN.</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;2,16</div>
-        <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div></div></div><div class="tv-slide" id="tvslide-2" style="display: block; padding: 0px 28px 20px;">
+        <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div></div></div><div class="tv-slide" id="tvslide-2" style="display: none; padding: 0px 28px 20px;">
     <div class="tv-header-bar" style="border-bottom:2px solid #cc000033;margin-bottom:16px;">
       <div style="display:flex;align-items:center;gap:14px;">
         <span style="font-size:24px">🦁</span>
         <div>
           <div class="tv-title" style="color:#cc0000">Fera Atacado</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:2px">Produtos selecionados no Modo TV</div>
+
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:20px;">
         <div style="display:flex;gap:14px;font-size:13px;">
-          <span style="color:#22c47d">✅ 10</span>
-          <span style="color:#f05252">⚠️ 0</span>
+          <span style="color:#22c47d">✅ 12</span>
+          <span style="color:#f05252">⚠️ 1</span>
           <span style="color:var(--muted)">➖ 0</span>
-          <span style="color:#f0a030">📦 4</span>
+          <span style="color:#f0a030">📦 3</span>
         </div>
         <div class="tv-stamp">Atualizado: 26/05/2026, 10:35</div>
       </div>
     </div>
     <div class="tv-grid"><div class="tv-card sem">
         <div class="tv-card-cod">10351ZPE</div>
-        <div class="tv-card-desc" title="BOIA PARA CAIXA D`AGUA GARDEN  ZAMAC 3/4" balao="" azul="" 10351zpe"="">BOIA PARA CAIXA D`AGUA GARDEN  ZAMAC 3/4" BALAO AZUL 10351ZPE</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;18,02</div>
         <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card sem">
         <div class="tv-card-cod">10351ZPRE</div>
-        <div class="tv-card-desc" title="BOIA PARA CAIXA D`AGUA GARDEN  ZAMAC 3/4" balao="" reforcado="" azul="" 10351zpre"="">BOIA PARA CAIXA D`AGUA GARDEN  ZAMAC 3/4" BALAO REFORCADO AZUL 10351ZPRE</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;22,41</div>
         <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card win">
         <div class="tv-card-cod">10840E</div>
-        <div class="tv-card-desc" title="JUNCAO PARA MAQUINA LAVAR ZAMAC CROMADO GARDEN - 10840E">JUNCAO PARA MAQUINA LAVAR ZAMAC CROMADO GARDEN - 10840E</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;15,33</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#ff6b35">METAIS REI</span>
             <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;23,19</span>
             <span class="tv-conc-dif win">▼ 33.9%</span>
           </div></div></div><div class="tv-card win">
+        <div class="tv-card-cod">10870E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;13,59</div>
+        <div class="tv-card-concorrentes"><div class="tv-conc-row">
+            <span class="tv-conc-nome" style="color:#ff6b35">METAIS REI</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;22,27</span>
+            <span class="tv-conc-dif win">▼ 39.0%</span>
+          </div></div></div><div class="tv-card win">
         <div class="tv-card-cod">10857E</div>
-        <div class="tv-card-desc" title="AUMENTO GARDEN ZAMAC AMARELO 1/2" curto="" -="" 10857e"="">AUMENTO GARDEN ZAMAC AMARELO 1/2"  CURTO - 10857E</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;4,12</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#ff6b35">METAIS REI</span>
@@ -2632,7 +2648,6 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
             <span class="tv-conc-dif win">▼ 40.7%</span>
           </div></div></div><div class="tv-card win">
         <div class="tv-card-cod">10858E</div>
-        <div class="tv-card-desc" title="AUMENTO GARDEN ZAMAC AMARELO 1/2" medio="" -="" 10858e"="">AUMENTO GARDEN ZAMAC AMARELO 1/2"  MEDIO - 10858E</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;4,87</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#ff6b35">METAIS REI</span>
@@ -2640,75 +2655,77 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
             <span class="tv-conc-dif win">▼ 43.8%</span>
           </div></div></div><div class="tv-card win">
         <div class="tv-card-cod">10859E</div>
-        <div class="tv-card-desc" title="AUMENTO GARDEN ZAMAC AMARELO 1/2" longo="" -="" 10859e"="">AUMENTO GARDEN ZAMAC AMARELO 1/2" LONGO - 10859E</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;6,35</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#ff6b35">METAIS REI</span>
             <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;10,49</span>
             <span class="tv-conc-dif win">▼ 39.5%</span>
           </div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">10860E</div>
-        <div class="tv-card-desc" title="AUMENTO GARDEN ZAMAC AMARELO 3/4" curto="" -="" 10860e"="">AUMENTO GARDEN ZAMAC AMARELO 3/4"  CURTO - 10860E</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;4,72</div>
+        <div class="tv-card-cod">11850E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;6,51</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#ff6b35">METAIS REI</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;10,28</span>
-            <span class="tv-conc-dif win">▼ 54.1%</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;9,59</span>
+            <span class="tv-conc-dif win">▼ 32.1%</span>
           </div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">10861E</div>
-        <div class="tv-card-desc" title="AUMENTO GARDEN ZAMAC AMARELO 3/4" medio="" -="" 10861e"="">AUMENTO GARDEN ZAMAC AMARELO 3/4"  MEDIO - 10861E</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;5,21</div>
+        <div class="tv-card-cod">11851E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;7,72</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#ff6b35">METAIS REI</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;11,73</span>
-            <span class="tv-conc-dif win">▼ 55.6%</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;13,16</span>
+            <span class="tv-conc-dif win">▼ 41.3%</span>
           </div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">10862E</div>
-        <div class="tv-card-desc" title="AUMENTO GARDEN ZAMAC AMARELO 3/4" longo="" -="" 10862e"="">AUMENTO GARDEN ZAMAC AMARELO 3/4" LONGO - 10862E</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;7,46</div>
+        <div class="tv-card-cod">11852E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;9,20</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#ff6b35">METAIS REI</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;16,26</span>
-            <span class="tv-conc-dif win">▼ 54.1%</span>
-          </div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">10870E</div>
-        <div class="tv-card-desc" title="JUNCAO " y"="" para="" filtro="" garden="" metal="" 1="" 2"="" cromada="" -="" 10870e"="">JUNCAO "Y" PARA FILTRO GARDEN METAL 1/2" CROMADA - 10870E</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;13,59</div>
-        <div class="tv-card-concorrentes"><div class="tv-conc-row">
-            <span class="tv-conc-nome" style="color:#ff6b35">METAIS REI</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;22,27</span>
-            <span class="tv-conc-dif win">▼ 39.0%</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;15,89</span>
+            <span class="tv-conc-dif win">▼ 42.1%</span>
           </div></div></div><div class="tv-card sem">
         <div class="tv-card-cod">11701TG</div>
-        <div class="tv-card-desc" title="ESGUICHO REVOLVER GARDEN TRADICIONAL ZAMAC 1/2" -="" 11701tg"="">ESGUICHO REVOLVER GARDEN TRADICIONAL ZAMAC 1/2" - 11701TG</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;24,75</div>
-        <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">11833G</div>
-        <div class="tv-card-desc" title="UNIAO PARA TORNEIRA GARDEN G-POP 3/4" x="" 1="" 2"="" zamac="" -="" 11833="" g"="">UNIAO PARA TORNEIRA GARDEN G-POP 3/4"x 1/2" ZAMAC - 11833 G</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;2,41</div>
+        <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card loss">
+        <div class="tv-card-cod">12701G</div>
+        <div class="tv-card-preco-garden" style="color:#f05252">R$&nbsp;8,98</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
-            <span class="tv-conc-nome" style="color:#ff6b35">INCA</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;3,12</span>
-            <span class="tv-conc-dif win">▼ 22.8%</span>
+            <span class="tv-conc-nome" style="color:#ff6b35">MAC LOREN</span>
+            <span class="tv-conc-preco" style="color:#4a8ff7">R$&nbsp;7,12</span>
+            <span class="tv-conc-dif loss">▲ 26.1%</span>
+          </div></div></div><div class="tv-card win">
+        <div class="tv-card-cod">10856E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;4,27</div>
+        <div class="tv-card-concorrentes"><div class="tv-conc-row">
+            <span class="tv-conc-nome" style="color:#ff6b35">METAIS REI</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;6,80</span>
+            <span class="tv-conc-dif win">▼ 37.2%</span>
+          </div></div></div><div class="tv-card win">
+        <div class="tv-card-cod">10863E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;6,61</div>
+        <div class="tv-card-concorrentes"><div class="tv-conc-row">
+            <span class="tv-conc-nome" style="color:#ff6b35">METAIS REI</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;11,29</span>
+            <span class="tv-conc-dif win">▼ 41.5%</span>
           </div></div></div><div class="tv-card win">
         <div class="tv-card-cod">11832G</div>
-        <div class="tv-card-desc" title="UNIAO PARA TORNEIRA GARDEN G-POP 1/2" x="" 1="" 2"="" zamac"="">UNIAO PARA TORNEIRA GARDEN G-POP 1/2"x 1/2" ZAMAC</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;2,44</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#ff6b35">INCA</span>
             <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;2,45</span>
             <span class="tv-conc-dif win">▼ 0.4%</span>
-          </div></div></div><div class="tv-card sem">
-        <div class="tv-card-cod">11834G</div>
-        <div class="tv-card-desc" title="UNIAO PARA TORNEIRA GARDEN G-POP 3/4" x="" 3="" 4"="" zamac"="">UNIAO PARA TORNEIRA GARDEN G-POP 3/4"x 3/4" ZAMAC</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;3,14</div>
-        <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div></div></div><div class="tv-slide" id="tvslide-3" style="display:none;padding:0 28px 20px">
+          </div></div></div><div class="tv-card win">
+        <div class="tv-card-cod">11833G</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;2,41</div>
+        <div class="tv-card-concorrentes"><div class="tv-conc-row">
+            <span class="tv-conc-nome" style="color:#ff6b35">INCA</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;3,12</span>
+            <span class="tv-conc-dif win">▼ 22.8%</span>
+          </div></div></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div></div></div><div class="tv-slide" id="tvslide-3" style="display: none; padding: 0px 28px 20px;">
     <div class="tv-header-bar" style="border-bottom:2px solid #2db84333;margin-bottom:16px;">
       <div style="display:flex;align-items:center;gap:14px;">
         <span style="font-size:24px">🏬</span>
         <div>
           <div class="tv-title" style="color:#2db843">Casa do Lojista</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:2px">Produtos selecionados no Modo TV</div>
+
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:20px;">
@@ -2716,14 +2733,13 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
           <span style="color:#22c47d">✅ 8</span>
           <span style="color:#f05252">⚠️ 1</span>
           <span style="color:var(--muted)">➖ 0</span>
-          <span style="color:#f0a030">📦 4</span>
+          <span style="color:#f0a030">📦 3</span>
         </div>
         <div class="tv-stamp">Atualizado: 13/05/2026, 11:18</div>
       </div>
     </div>
     <div class="tv-grid"><div class="tv-card win">
         <div class="tv-card-cod">10351ZPE</div>
-        <div class="tv-card-desc" title="TORN BOIA GARDEN  3/4ZAMAC LEVE">TORN BOIA GARDEN  3/4ZAMAC LEVE</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;17,50</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#64b5f6">ZB</span>
@@ -2731,11 +2747,16 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
             <span class="tv-conc-dif win">▼ 16.3%</span>
           </div></div></div><div class="tv-card sem">
         <div class="tv-card-cod">10351ZPRE</div>
-        <div class="tv-card-desc" title="TORN BOIA GARDEN  3/4ZAMAC REFORCADA">TORN BOIA GARDEN  3/4ZAMAC REFORCADA</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;21,70</div>
         <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card win">
+        <div class="tv-card-cod">10870E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;14,60</div>
+        <div class="tv-card-concorrentes"><div class="tv-conc-row">
+            <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;21,70</span>
+            <span class="tv-conc-dif win">▼ 32.7%</span>
+          </div></div></div><div class="tv-card win">
         <div class="tv-card-cod">10857E</div>
-        <div class="tv-card-desc" title="AUMENTO TORN.GARDEN ZAM.AM.1/2(A)CT">AUMENTO TORN.GARDEN ZAM.AM.1/2(A)CT</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;4,12</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
@@ -2747,7 +2768,6 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
             <span class="tv-conc-dif win">▼ 45.1%</span>
           </div></div></div><div class="tv-card win">
         <div class="tv-card-cod">10858E</div>
-        <div class="tv-card-desc" title="AUMENTO TORN.GARDEN ZAM.AM.1/2(B)MD">AUMENTO TORN.GARDEN ZAM.AM.1/2(B)MD</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;4,87</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
@@ -2759,7 +2779,6 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
             <span class="tv-conc-dif win">▼ 48.2%</span>
           </div></div></div><div class="tv-card win">
         <div class="tv-card-cod">10859E</div>
-        <div class="tv-card-desc" title="AUMENTO TORN.GARDEN ZAM.AM.1/2(C)LG">AUMENTO TORN.GARDEN ZAM.AM.1/2(C)LG</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;6,35</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
@@ -2770,83 +2789,75 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
             <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;11,40</span>
             <span class="tv-conc-dif win">▼ 44.3%</span>
           </div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">10860E</div>
-        <div class="tv-card-desc" title="AUMENTO TORN.GARDEN ZAM.AM.3/4(A)CT">AUMENTO TORN.GARDEN ZAM.AM.3/4(A)CT</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;4,72</div>
+        <div class="tv-card-cod">11850E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;6,98</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;9,90</span>
-            <span class="tv-conc-dif win">▼ 52.3%</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;9,40</span>
+            <span class="tv-conc-dif win">▼ 25.7%</span>
+          </div><div class="tv-conc-row">
+            <span class="tv-conc-nome" style="color:#64b5f6">BOGNAR</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;9,80</span>
+            <span class="tv-conc-dif win">▼ 28.8%</span>
           </div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">10861E</div>
-        <div class="tv-card-desc" title="AUMENTO TORN.GARDEN ZAM.AM.3/4(B)MD">AUMENTO TORN.GARDEN ZAM.AM.3/4(B)MD</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;5,20</div>
+        <div class="tv-card-cod">11851E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;8,30</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;11,30</span>
-            <span class="tv-conc-dif win">▼ 54.0%</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;12,80</span>
+            <span class="tv-conc-dif win">▼ 35.2%</span>
+          </div><div class="tv-conc-row">
+            <span class="tv-conc-nome" style="color:#64b5f6">BOGNAR</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;11,80</span>
+            <span class="tv-conc-dif win">▼ 29.7%</span>
           </div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">10862E</div>
-        <div class="tv-card-desc" title="AUMENTO TORN.GARDEN ZAM.AM.3/4(C)LG">AUMENTO TORN.GARDEN ZAM.AM.3/4(C)LG</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;7,46</div>
+        <div class="tv-card-cod">11852E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;9,85</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;15,70</span>
-            <span class="tv-conc-dif win">▼ 52.5%</span>
-          </div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">10870E</div>
-        <div class="tv-card-desc" title="JUNCAO METAL GARDEN Y P/FILTRO 1/2">JUNCAO METAL GARDEN Y P/FILTRO 1/2</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;14,60</div>
-        <div class="tv-card-concorrentes"><div class="tv-conc-row">
-            <span class="tv-conc-nome" style="color:#f05252">Metais Rei</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;21,70</span>
-            <span class="tv-conc-dif win">▼ 32.7%</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;15,50</span>
+            <span class="tv-conc-dif win">▼ 36.5%</span>
+          </div><div class="tv-conc-row">
+            <span class="tv-conc-nome" style="color:#64b5f6">BOGNAR</span>
+            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;13,30</span>
+            <span class="tv-conc-dif win">▼ 25.9%</span>
           </div></div></div><div class="tv-card loss">
         <div class="tv-card-cod">11701TG</div>
-        <div class="tv-card-desc" title="ESGUICHO REV.GARDEN 1/2TRAD. 1170">ESGUICHO REV.GARDEN 1/2TRAD. 1170</div>
         <div class="tv-card-preco-garden" style="color:#f05252">R$&nbsp;25,20</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#64b5f6">FICO</span>
             <span class="tv-conc-preco" style="color:#4a8ff7">R$&nbsp;21,90</span>
             <span class="tv-conc-dif loss">▲ 15.1%</span>
           </div></div></div><div class="tv-card sem">
-        <div class="tv-card-cod">11833G</div>
-        <div class="tv-card-desc" title="UNIAO ZAMAC GARDEN 3/4x1/2 P/TORN.">UNIAO ZAMAC GARDEN 3/4x1/2 P/TORN.</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;30,50</div>
-        <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card sem">
         <div class="tv-card-cod">11832G</div>
-        <div class="tv-card-desc" title="UNIAO ZAMAC GARDEN 1/2x1/2 P/TORN.">UNIAO ZAMAC GARDEN 1/2x1/2 P/TORN.</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;30,00</div>
         <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card sem">
-        <div class="tv-card-cod">11834G</div>
-        <div class="tv-card-desc" title="UNIAO ZAMAC GARDEN 3/4x3/4 P/TORN.">UNIAO ZAMAC GARDEN 3/4x3/4 P/TORN.</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;33,20</div>
-        <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div></div></div><div class="tv-slide" id="tvslide-4" style="display:none;padding:0 28px 20px">
+        <div class="tv-card-cod">11833G</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;30,50</div>
+        <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div></div></div><div class="tv-slide" id="tvslide-4" style="display: none; padding: 0px 28px 20px;">
     <div class="tv-header-bar" style="border-bottom:2px solid #f07d2b33;margin-bottom:16px;">
       <div style="display:flex;align-items:center;gap:14px;">
         <span style="font-size:24px">🏗️</span>
         <div>
           <div class="tv-title" style="color:#f07d2b">ConstruJá</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:2px">Produtos selecionados no Modo TV</div>
+
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:20px;">
         <div style="display:flex;gap:14px;font-size:13px;">
-          <span style="color:#22c47d">✅ 7</span>
+          <span style="color:#22c47d">✅ 4</span>
           <span style="color:#f05252">⚠️ 2</span>
           <span style="color:var(--muted)">➖ 0</span>
-          <span style="color:#f0a030">📦 4</span>
+          <span style="color:#f0a030">📦 9</span>
         </div>
         <div class="tv-stamp">Atualizado: 19/05/2026, 13:42</div>
       </div>
     </div>
     <div class="tv-grid"><div class="tv-card sem">
         <div class="tv-card-cod">10351ZPE</div>
-        <div class="tv-card-desc" title="TORN BOIA ZAMAC 3/4 PEQ HA">TORN BOIA ZAMAC 3/4 PEQ HA</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;18,12</div>
         <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card loss">
         <div class="tv-card-cod">10351ZPRE</div>
-        <div class="tv-card-desc" title="TORN BOIA ZAMAC 3/4 GR HA">TORN BOIA ZAMAC 3/4 GR HA</div>
         <div class="tv-card-preco-garden" style="color:#f05252">R$&nbsp;21,75</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#64b5f6">PERFECT LUXO</span>
@@ -2854,15 +2865,16 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
             <span class="tv-conc-dif loss">▲ 10.6%</span>
           </div></div></div><div class="tv-card win">
         <div class="tv-card-cod">10840E</div>
-        <div class="tv-card-desc" title="JUNÇÃO P/ MAQ LAVAR 1/2 ZAMAC">JUNÇÃO P/ MAQ LAVAR 1/2 ZAMAC</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;17,21</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#22c47d">SEA</span>
             <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;22,75</span>
             <span class="tv-conc-dif win">▼ 24.4%</span>
-          </div></div></div><div class="tv-card win">
+          </div></div></div><div class="tv-card sem">
+        <div class="tv-card-cod">10870E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;15,85</div>
+        <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card win">
         <div class="tv-card-cod">10857E</div>
-        <div class="tv-card-desc" title="AUMENTO (A) CURTO ZAMAC 1/2">AUMENTO (A) CURTO ZAMAC 1/2</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;4,55</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#64b5f6">SEA</span>
@@ -2870,7 +2882,6 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
             <span class="tv-conc-dif win">▼ 28.5%</span>
           </div></div></div><div class="tv-card win">
         <div class="tv-card-cod">10858E</div>
-        <div class="tv-card-desc" title="AUMENTO (B) MEDIO ZAMAC 1/2">AUMENTO (B) MEDIO ZAMAC 1/2</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;5,38</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#64b5f6">SEA</span>
@@ -2878,7 +2889,6 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
             <span class="tv-conc-dif win">▼ 33.5%</span>
           </div></div></div><div class="tv-card loss">
         <div class="tv-card-cod">10859E</div>
-        <div class="tv-card-desc" title="AUMENTO (C) LONGO ZAMAC 1/2">AUMENTO (C) LONGO ZAMAC 1/2</div>
         <div class="tv-card-preco-garden" style="color:#f05252">R$&nbsp;7,01</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#22c47d">SEA</span>
@@ -2888,65 +2898,41 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
             <span class="tv-conc-nome" style="color:#64b5f6">SEA</span>
             <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;11,91</span>
             <span class="tv-conc-dif win">▼ 41.1%</span>
-          </div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">10860E</div>
-        <div class="tv-card-desc" title="AUMENTO (A) CURTO ZAMAC 3/4">AUMENTO (A) CURTO ZAMAC 3/4</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;5,21</div>
-        <div class="tv-card-concorrentes"><div class="tv-conc-row">
-            <span class="tv-conc-nome" style="color:#22c47d">SEA</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;9,06</span>
-            <span class="tv-conc-dif win">▼ 42.5%</span>
-          </div><div class="tv-conc-row">
-            <span class="tv-conc-nome" style="color:#64b5f6">SEA</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;9,06</span>
-            <span class="tv-conc-dif win">▼ 42.5%</span>
-          </div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">10861E</div>
-        <div class="tv-card-desc" title="AUMENTO (B) MEDIO ZAMAC 3/4">AUMENTO (B) MEDIO ZAMAC 3/4</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;5,76</div>
-        <div class="tv-card-concorrentes"><div class="tv-conc-row">
-            <span class="tv-conc-nome" style="color:#22c47d">SEA</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;6,36</span>
-            <span class="tv-conc-dif win">▼ 9.4%</span>
-          </div><div class="tv-conc-row">
-            <span class="tv-conc-nome" style="color:#64b5f6">SEA</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;6,36</span>
-            <span class="tv-conc-dif win">▼ 9.4%</span>
-          </div></div></div><div class="tv-card win">
-        <div class="tv-card-cod">10862E</div>
-        <div class="tv-card-desc" title="AUMENTO (C) LONGO ZAMAC 3/4">AUMENTO (C) LONGO ZAMAC 3/4</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;8,24</div>
-        <div class="tv-card-concorrentes"><div class="tv-conc-row">
-            <span class="tv-conc-nome" style="color:#64b5f6">SEA</span>
-            <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;9,72</span>
-            <span class="tv-conc-dif win">▼ 15.2%</span>
           </div></div></div><div class="tv-card sem">
-        <div class="tv-card-cod">10870E</div>
-        <div class="tv-card-desc" title="JUNÇÃO P/ FILTRO 1/2 ZAMAC">JUNÇÃO P/ FILTRO 1/2 ZAMAC</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;15,85</div>
+        <div class="tv-card-cod">11850E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;7,55</div>
+        <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card sem">
+        <div class="tv-card-cod">11851E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;8,95</div>
+        <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card sem">
+        <div class="tv-card-cod">11852E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;10,67</div>
         <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card sem">
         <div class="tv-card-cod">11701TG</div>
-        <div class="tv-card-desc" title="ESGUICHO REV ZAMAC 1 JATO TRAD 1/2">ESGUICHO REV ZAMAC 1 JATO TRAD 1/2</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;27,80</div>
+        <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card sem">
+        <div class="tv-card-cod">12701G</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;9,26</div>
+        <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card sem">
+        <div class="tv-card-cod">10856E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;4,62</div>
+        <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card sem">
+        <div class="tv-card-cod">10863E</div>
+        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;7,16</div>
         <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div><div class="tv-card win">
         <div class="tv-card-cod">11833G</div>
-        <div class="tv-card-desc" title="BICO/UNIAO P/ TORN 3/4X1/2 ZAMAC ZINC">BICO/UNIAO P/ TORN 3/4X1/2 ZAMAC ZINC</div>
         <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;2,65</div>
         <div class="tv-card-concorrentes"><div class="tv-conc-row">
             <span class="tv-conc-nome" style="color:#22c47d">SEA</span>
             <span class="tv-conc-preco" style="color:#f05252">R$&nbsp;3,09</span>
             <span class="tv-conc-dif win">▼ 14.2%</span>
-          </div></div></div><div class="tv-card sem">
-        <div class="tv-card-cod">11834G</div>
-        <div class="tv-card-desc" title="BICO/UNIAO P/ TORN 3/4X3/4 ZAMAC ZINC">BICO/UNIAO P/ TORN 3/4X3/4 ZAMAC ZINC</div>
-        <div class="tv-card-preco-garden" style="color:var(--blue)">R$&nbsp;3,47</div>
-        <div class="tv-card-concorrentes"><div class="tv-sem-label">Sem concorrente</div></div></div></div></div><div class="tv-slide" id="tvslide-5" style="display:none;padding:0 28px 20px">
+          </div></div></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div><div class="tv-card-empty"></div></div></div><div class="tv-slide" id="tvslide-5" style="display: none; padding: 0px 28px 20px;">
     <div class="tv-header-bar" style="border-bottom:2px solid #a855f733;margin-bottom:16px;">
       <div style="display:flex;align-items:center;gap:14px;">
         <span style="font-size:24px">📊</span>
         <div>
-          <div class="tv-title" style="color:#a855f7">Comparativo — Preço Garden por Cliente</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:2px">14 produto(s) × 5 cliente(s) &nbsp;·&nbsp; <span style="color:#22c47d">■</span> menor &nbsp;·&nbsp; <span style="color:#f05252">■</span> maior</div>
+          <div class="tv-title" style="color:#a855f7">Comparativo — Preço Garden por Cliente (1–10)</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:2px">16 produto(s) × 5 cliente(s) &nbsp;·&nbsp; <span style="color:#22c47d">■</span> menor &nbsp;·&nbsp; <span style="color:#f05252">■</span> maior</div>
         </div>
       </div>
     </div>
@@ -2962,34 +2948,55 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
       <td class="td-desc" style="font-size:12px">TORN BOIA GARDEN  3/4ZAMAC REFORCADA</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;19,99</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;18,59</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;22,41</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;21,70</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;21,75</td></tr><tr class="prod-row">
       <td class="td-cod-g">10840E</td>
       <td class="td-desc" style="font-size:12px">JUNCAO METAL GARDEN P/MAQ.LAVAR</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;16,49</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;14,52</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;15,33</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:var(--muted)">—</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;17,21</td></tr><tr class="prod-row">
+      <td class="td-cod-g">10870E</td>
+      <td class="td-desc" style="font-size:12px">JUNCAO METAL GARDEN Y P/FILTRO 1/2</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;14,94</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;13,36</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;13,59</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;14,60</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;15,85</td></tr><tr class="prod-row">
       <td class="td-cod-g">10857E</td>
       <td class="td-desc" style="font-size:12px">AUMENTO TORN.GARDEN ZAM.AM.1/2(A)CT</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;4,22</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;3,76</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;4,12</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;4,12</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;4,55</td></tr><tr class="prod-row">
       <td class="td-cod-g">10858E</td>
       <td class="td-desc" style="font-size:12px">AUMENTO TORN.GARDEN ZAM.AM.1/2(B)MD</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;4,97</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;4,44</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;4,87</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;4,87</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;5,38</td></tr><tr class="prod-row">
       <td class="td-cod-g">10859E</td>
       <td class="td-desc" style="font-size:12px">AUMENTO TORN.GARDEN ZAM.AM.1/2(C)LG</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;6,48</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;5,79</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;6,35</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;6,35</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;7,01</td></tr><tr class="prod-row">
-      <td class="td-cod-g">10860E</td>
-      <td class="td-desc" style="font-size:12px">AUMENTO TORN.GARDEN ZAM.AM.3/4(A)CT</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;4,99</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:var(--muted)">—</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;4,72</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;4,72</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;5,21</td></tr><tr class="prod-row">
-      <td class="td-cod-g">10861E</td>
-      <td class="td-desc" style="font-size:12px">AUMENTO TORN.GARDEN ZAM.AM.3/4(B)MD</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;5,42</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;4,76</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;5,21</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;5,20</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;5,76</td></tr><tr class="prod-row">
-      <td class="td-cod-g">10862E</td>
-      <td class="td-desc" style="font-size:12px">AUMENTO TORN.GARDEN ZAM.AM.3/4(C)LG</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;7,90</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;6,81</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;7,46</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;7,46</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;8,24</td></tr><tr class="prod-row">
-      <td class="td-cod-g">10870E</td>
-      <td class="td-desc" style="font-size:12px">JUNCAO METAL GARDEN Y P/FILTRO 1/2</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;14,94</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;13,36</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;13,59</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;14,60</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;15,85</td></tr><tr class="prod-row">
+      <td class="td-cod-g">11850E</td>
+      <td class="td-desc" style="font-size:12px">EXTENSAO TORN.GARDEN ZAM.CR1/2(A)CT</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;7,12</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;6,37</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;6,51</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;6,98</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;7,55</td></tr><tr class="prod-row">
+      <td class="td-cod-g">11851E</td>
+      <td class="td-desc" style="font-size:12px">EXTENSAO TORN.GARDEN ZAM.CR1/2(B)MD</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;8,44</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;7,55</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;7,72</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;8,30</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;8,95</td></tr><tr class="prod-row">
+      <td class="td-cod-g">11852E</td>
+      <td class="td-desc" style="font-size:12px">EXTENSAO TORN.GARDEN ZAM.CR1/2(C)LG</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;10,06</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;9,00</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;9,20</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;9,85</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;10,67</td></tr></tbody>
+      </table>
+    </div></div><div class="tv-slide" id="tvslide-6" style="display: block; padding: 0px 28px 20px;">
+    <div class="tv-header-bar" style="border-bottom:2px solid #a855f733;margin-bottom:16px;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <span style="font-size:24px">📊</span>
+        <div>
+          <div class="tv-title" style="color:#a855f7">Comparativo — Preço Garden por Cliente (11–20)</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:2px">16 produto(s) × 5 cliente(s) &nbsp;·&nbsp; <span style="color:#22c47d">■</span> menor &nbsp;·&nbsp; <span style="color:#f05252">■</span> maior</div>
+        </div>
+      </div>
+    </div>
+    <div style="overflow:auto;max-height:calc(100vh - 200px)">
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead><tr style="position:sticky;top:0;background:var(--bg2);z-index:5">
+    <th style="text-align:left;padding:8px 10px;font-size:11px;color:var(--muted);white-space:nowrap;min-width:90px">CÓD. GARDEN</th>
+    <th style="text-align:left;padding:8px 10px;font-size:11px;color:var(--muted);min-width:180px">DESCRIÇÃO</th><th style="text-align:center;padding:8px 14px;font-size:11px;font-weight:700;color:#4a8ff7;border-bottom:3px solid #4a8ff7;background:#4a8ff711;white-space:nowrap;min-width:120px">🏪 Cofema</th><th style="text-align:center;padding:8px 14px;font-size:11px;font-weight:700;color:#e03030;border-bottom:3px solid #e03030;background:#e0303011;white-space:nowrap;min-width:120px">⚡ Eletroleste</th><th style="text-align:center;padding:8px 14px;font-size:11px;font-weight:700;color:#cc0000;border-bottom:3px solid #cc0000;background:#cc000011;white-space:nowrap;min-width:120px">🦁 Fera Atacado</th><th style="text-align:center;padding:8px 14px;font-size:11px;font-weight:700;color:#2db843;border-bottom:3px solid #2db843;background:#2db84311;white-space:nowrap;min-width:120px">🏬 Casa do Lojista</th><th style="text-align:center;padding:8px 14px;font-size:11px;font-weight:700;color:#f07d2b;border-bottom:3px solid #f07d2b;background:#f07d2b11;white-space:nowrap;min-width:120px">🏗️ ConstruJá</th></tr></thead>
+        <tbody><tr class="prod-row">
       <td class="td-cod-g">11701TG</td>
       <td class="td-desc" style="font-size:12px">ESGUICHO REV.GARDEN 1/2TRAD. 1170</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;25,90</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;22,19</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;24,75</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;25,20</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;27,80</td></tr><tr class="prod-row">
-      <td class="td-cod-g">11833G</td>
-      <td class="td-desc" style="font-size:12px">UNIAO ZAMAC GARDEN 3/4x1/2 P/TORN.</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;2,69</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;2,16</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;2,41</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;30,50</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;2,65</td></tr><tr class="prod-row">
+      <td class="td-cod-g">12701G</td>
+      <td class="td-desc" style="font-size:12px">ESGUICHO REV.GARDEN 1/2 PLAST.  1270</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;8,92</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:var(--muted)">—</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;8,98</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:var(--muted)">—</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;9,26</td></tr><tr class="prod-row">
+      <td class="td-cod-g">10856E</td>
+      <td class="td-desc" style="font-size:12px">BUCHA  RED.GARDEN ZAMAC AM. 3/4x1/2</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;4,14</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:var(--muted)">—</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;4,27</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:var(--muted)">—</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;4,62</td></tr><tr class="prod-row">
+      <td class="td-cod-g">10863E</td>
+      <td class="td-desc" style="font-size:12px">BUCHA  AUMENTO GARDEN ZAM.AM1/2x3/4</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;6,86</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:var(--muted)">—</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;6,61</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:var(--muted)">—</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;7,16</td></tr><tr class="prod-row">
       <td class="td-cod-g">11832G</td>
       <td class="td-desc" style="font-size:12px">UNIAO ZAMAC GARDEN 1/2x1/2 P/TORN.</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;2,58</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:var(--muted)">—</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;2,44</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;30,00</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:var(--muted)">—</td></tr><tr class="prod-row">
-      <td class="td-cod-g">11834G</td>
-      <td class="td-desc" style="font-size:12px">UNIAO ZAMAC GARDEN 3/4x3/4 P/TORN.</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;3,24</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:var(--muted)">—</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;3,14</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;33,20</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;3,47</td></tr></tbody>
+      <td class="td-cod-g">11833G</td>
+      <td class="td-desc" style="font-size:12px">UNIAO ZAMAC GARDEN 3/4x1/2 P/TORN.</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;2,69</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#22c47d;font-weight:700;background:rgba(34,196,125,.08);white-space:nowrap">R$&nbsp;2,16</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;2,41</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:#f05252;font-weight:700;background:rgba(240,82,82,.08);white-space:nowrap">R$&nbsp;30,50</td><td style="text-align:center;padding:6px 14px;border-left:1px solid var(--bord2);color:inherit;font-weight:400;background:;white-space:nowrap">R$&nbsp;2,65</td></tr></tbody>
       </table>
     </div></div></div>
   <div class="tv-ticker" id="tv-ticker" style="display: block;">
-    <div class="tv-ticker-inner" id="tv-ticker-inner"><span class="tv-ticker-item"><b>10351ZPE</b> R$&nbsp;15,99 <span class="tk-win">▼ 7.8%</span></span><span class="tv-ticker-item"><b>10351ZPRE</b> R$&nbsp;19,99 <span class="tk-win">▼ 9.8%</span></span><span class="tv-ticker-item"><b>10840E</b> R$&nbsp;16,49 <span class="tk-win">▼ 29.8%</span></span><span class="tv-ticker-item"><b>10857E</b> R$&nbsp;4,22 <span class="tk-win">▼ 38.3%</span></span><span class="tv-ticker-item"><b>10858E</b> R$&nbsp;4,97 <span class="tk-win">▼ 41.7%</span></span><span class="tv-ticker-item"><b>10859E</b> R$&nbsp;6,48 <span class="tk-win">▼ 39.1%</span></span><span class="tv-ticker-item"><b>10860E</b> R$&nbsp;4,99 <span class="tk-win">▼ 52.1%</span></span><span class="tv-ticker-item"><b>10861E</b> R$&nbsp;5,42 <span class="tk-win">▼ 54.4%</span></span><span class="tv-ticker-item"><b>10862E</b> R$&nbsp;7,90 <span class="tk-win">▼ 52.0%</span></span><span class="tv-ticker-item"><b>10870E</b> R$&nbsp;14,94 <span class="tk-win">▼ 32.4%</span></span><span class="tv-ticker-item"><b>11701TG</b> R$&nbsp;25,90 <span class="tk-loss">▲ 6.1%</span></span><span class="tv-ticker-item"><b>11832G</b> R$&nbsp;2,58 <span class="tk-loss">▲ 8.9%</span></span><span class="tv-ticker-item"><b>11833G</b> R$&nbsp;2,69 <span class="tk-win">▼ 5.6%</span></span><span class="tv-ticker-item"><b>11834G</b> R$&nbsp;3,24 <span class="tk-loss">▲ 6.2%</span></span><span class="tv-ticker-item"><b>10351ZPE</b> R$&nbsp;15,99 <span class="tk-win">▼ 7.8%</span></span><span class="tv-ticker-item"><b>10351ZPRE</b> R$&nbsp;19,99 <span class="tk-win">▼ 9.8%</span></span><span class="tv-ticker-item"><b>10840E</b> R$&nbsp;16,49 <span class="tk-win">▼ 29.8%</span></span><span class="tv-ticker-item"><b>10857E</b> R$&nbsp;4,22 <span class="tk-win">▼ 38.3%</span></span><span class="tv-ticker-item"><b>10858E</b> R$&nbsp;4,97 <span class="tk-win">▼ 41.7%</span></span><span class="tv-ticker-item"><b>10859E</b> R$&nbsp;6,48 <span class="tk-win">▼ 39.1%</span></span><span class="tv-ticker-item"><b>10860E</b> R$&nbsp;4,99 <span class="tk-win">▼ 52.1%</span></span><span class="tv-ticker-item"><b>10861E</b> R$&nbsp;5,42 <span class="tk-win">▼ 54.4%</span></span><span class="tv-ticker-item"><b>10862E</b> R$&nbsp;7,90 <span class="tk-win">▼ 52.0%</span></span><span class="tv-ticker-item"><b>10870E</b> R$&nbsp;14,94 <span class="tk-win">▼ 32.4%</span></span><span class="tv-ticker-item"><b>11701TG</b> R$&nbsp;25,90 <span class="tk-loss">▲ 6.1%</span></span><span class="tv-ticker-item"><b>11832G</b> R$&nbsp;2,58 <span class="tk-loss">▲ 8.9%</span></span><span class="tv-ticker-item"><b>11833G</b> R$&nbsp;2,69 <span class="tk-win">▼ 5.6%</span></span><span class="tv-ticker-item"><b>11834G</b> R$&nbsp;3,24 <span class="tk-loss">▲ 6.2%</span></span></div>
+    <div class="tv-ticker-inner" id="tv-ticker-inner"><span class="tv-ticker-item"><b>10351ZPE</b> R$&nbsp;15,99 <span class="tk-win">▼ 7.8%</span></span><span class="tv-ticker-item"><b>10351ZPRE</b> R$&nbsp;19,99 <span class="tk-win">▼ 9.8%</span></span><span class="tv-ticker-item"><b>10840E</b> R$&nbsp;16,49 <span class="tk-win">▼ 29.8%</span></span><span class="tv-ticker-item"><b>10856E</b> R$&nbsp;4,14 <span class="tk-win">▼ 38.6%</span></span><span class="tv-ticker-item"><b>10857E</b> R$&nbsp;4,22 <span class="tk-win">▼ 38.3%</span></span><span class="tv-ticker-item"><b>10858E</b> R$&nbsp;4,97 <span class="tk-win">▼ 41.7%</span></span><span class="tv-ticker-item"><b>10859E</b> R$&nbsp;6,48 <span class="tk-win">▼ 39.1%</span></span><span class="tv-ticker-item"><b>10863E</b> R$&nbsp;6,86 <span class="tk-win">▼ 40.0%</span></span><span class="tv-ticker-item"><b>10870E</b> R$&nbsp;14,94 <span class="tk-win">▼ 32.4%</span></span><span class="tv-ticker-item"><b>11701TG</b> R$&nbsp;25,90 <span class="tk-loss">▲ 6.1%</span></span><span class="tv-ticker-item"><b>11832G</b> R$&nbsp;2,58 <span class="tk-loss">▲ 8.9%</span></span><span class="tv-ticker-item"><b>11833G</b> R$&nbsp;2,69 <span class="tk-win">▼ 5.6%</span></span><span class="tv-ticker-item"><b>11850E</b> R$&nbsp;7,12 <span class="tk-win">▼ 26.7%</span></span><span class="tv-ticker-item"><b>11851E</b> R$&nbsp;8,44 <span class="tk-win">▼ 36.7%</span></span><span class="tv-ticker-item"><b>11852E</b> R$&nbsp;10,06 <span class="tk-win">▼ 37.5%</span></span><span class="tv-ticker-item"><b>12701G</b> R$&nbsp;8,92 <span class="tk-loss">▲ 27.6%</span></span><span class="tv-ticker-item"><b>10351ZPE</b> R$&nbsp;15,99 <span class="tk-win">▼ 7.8%</span></span><span class="tv-ticker-item"><b>10351ZPRE</b> R$&nbsp;19,99 <span class="tk-win">▼ 9.8%</span></span><span class="tv-ticker-item"><b>10840E</b> R$&nbsp;16,49 <span class="tk-win">▼ 29.8%</span></span><span class="tv-ticker-item"><b>10856E</b> R$&nbsp;4,14 <span class="tk-win">▼ 38.6%</span></span><span class="tv-ticker-item"><b>10857E</b> R$&nbsp;4,22 <span class="tk-win">▼ 38.3%</span></span><span class="tv-ticker-item"><b>10858E</b> R$&nbsp;4,97 <span class="tk-win">▼ 41.7%</span></span><span class="tv-ticker-item"><b>10859E</b> R$&nbsp;6,48 <span class="tk-win">▼ 39.1%</span></span><span class="tv-ticker-item"><b>10863E</b> R$&nbsp;6,86 <span class="tk-win">▼ 40.0%</span></span><span class="tv-ticker-item"><b>10870E</b> R$&nbsp;14,94 <span class="tk-win">▼ 32.4%</span></span><span class="tv-ticker-item"><b>11701TG</b> R$&nbsp;25,90 <span class="tk-loss">▲ 6.1%</span></span><span class="tv-ticker-item"><b>11832G</b> R$&nbsp;2,58 <span class="tk-loss">▲ 8.9%</span></span><span class="tv-ticker-item"><b>11833G</b> R$&nbsp;2,69 <span class="tk-win">▼ 5.6%</span></span><span class="tv-ticker-item"><b>11850E</b> R$&nbsp;7,12 <span class="tk-win">▼ 26.7%</span></span><span class="tv-ticker-item"><b>11851E</b> R$&nbsp;8,44 <span class="tk-win">▼ 36.7%</span></span><span class="tv-ticker-item"><b>11852E</b> R$&nbsp;10,06 <span class="tk-win">▼ 37.5%</span></span><span class="tv-ticker-item"><b>12701G</b> R$&nbsp;8,92 <span class="tk-loss">▲ 27.6%</span></span></div>
   </div>
-  <div id="tv-dots" style="position:fixed;bottom:44px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:999;"><span onclick="tvGoTo(0)" id="tvdot-0" style="width: 10px; height: 10px; border-radius: 50%; cursor: pointer; display: inline-block; transition: background 0.2s; background: rgba(255, 255, 255, 0.3);"></span><span onclick="tvGoTo(1)" id="tvdot-1" style="width: 10px; height: 10px; border-radius: 50%; cursor: pointer; display: inline-block; transition: background 0.2s; background: rgba(255, 255, 255, 0.3);"></span><span onclick="tvGoTo(2)" id="tvdot-2" style="width: 10px; height: 10px; border-radius: 50%; cursor: pointer; display: inline-block; transition: background 0.2s; background: rgb(255, 255, 255);"></span><span onclick="tvGoTo(3)" id="tvdot-3" style="width:10px;height:10px;border-radius:50%;cursor:pointer;display:inline-block;transition:background .2s;background:rgba(255,255,255,.3)"></span><span onclick="tvGoTo(4)" id="tvdot-4" style="width:10px;height:10px;border-radius:50%;cursor:pointer;display:inline-block;transition:background .2s;background:rgba(255,255,255,.3)"></span><span onclick="tvGoTo(5)" id="tvdot-5" style="width:10px;height:10px;border-radius:50%;cursor:pointer;display:inline-block;transition:background .2s;background:rgba(255,255,255,.3)"></span></div>
+  <div id="tv-dots" style="position:fixed;bottom:44px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:999;"><span onclick="tvGoTo(0)" id="tvdot-0" style="width: 10px; height: 10px; border-radius: 50%; cursor: pointer; display: inline-block; transition: background 0.2s; background: rgba(255, 255, 255, 0.3);"></span><span onclick="tvGoTo(1)" id="tvdot-1" style="width: 10px; height: 10px; border-radius: 50%; cursor: pointer; display: inline-block; transition: background 0.2s; background: rgba(255, 255, 255, 0.3);"></span><span onclick="tvGoTo(2)" id="tvdot-2" style="width: 10px; height: 10px; border-radius: 50%; cursor: pointer; display: inline-block; transition: background 0.2s; background: rgba(255, 255, 255, 0.3);"></span><span onclick="tvGoTo(3)" id="tvdot-3" style="width: 10px; height: 10px; border-radius: 50%; cursor: pointer; display: inline-block; transition: background 0.2s; background: rgba(255, 255, 255, 0.3);"></span><span onclick="tvGoTo(4)" id="tvdot-4" style="width: 10px; height: 10px; border-radius: 50%; cursor: pointer; display: inline-block; transition: background 0.2s; background: rgba(255, 255, 255, 0.3);"></span><span onclick="tvGoTo(5)" id="tvdot-5" style="width: 10px; height: 10px; border-radius: 50%; cursor: pointer; display: inline-block; transition: background 0.2s; background: rgba(255, 255, 255, 0.3);"></span><span onclick="tvGoTo(6)" id="tvdot-6" style="width: 10px; height: 10px; border-radius: 50%; cursor: pointer; display: inline-block; transition: background 0.2s; background: rgb(255, 255, 255);"></span></div>
   <button id="tv-prev" onclick="tvSlide(-1)" style="position: fixed; left: 16px; top: 50%; transform: translateY(-50%); z-index: 999; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); color: rgb(255, 255, 255); font-size: 22px; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; align-items: center; justify-content: center; display: flex;">‹</button>
   <button id="tv-next" onclick="tvSlide(1)" style="position: fixed; right: 16px; top: 50%; transform: translateY(-50%); z-index: 999; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); color: rgb(255, 255, 255); font-size: 22px; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; align-items: center; justify-content: center; display: flex;">›</button>
 </div>
@@ -2999,7 +3006,7 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
 <!-- ══════════════════════════════════════════════
      PAINEL DE CONFIGURAÇÕES
 ══════════════════════════════════════════════ -->
-<div id="cfg-overlay" onclick="fecharConfigOverlay(event)" class="">
+<div id="cfg-overlay" onclick="fecharConfigOverlay(event)">
   <div id="cfg-panel">
     <div class="cfg-header">
       <div>
@@ -3013,647 +3020,17 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
       <div style="display:flex;align-items:center;gap:14px;padding:12px 0 4px;border-bottom:1px solid var(--bord2);margin-bottom:4px;">
         <span style="font-size:13px;color:var(--muted);white-space:nowrap">⏱ Tempo por slide:</span>
         <input type="range" id="tv-timer-range" min="5" max="60" step="5" value="12" oninput="tvTimerChange(this.value)" style="flex:1;accent-color:var(--blue);cursor:pointer;">
-        <span id="tv-timer-label" style="font-size:14px;font-weight:700;color:var(--blue);min-width:40px;text-align:right">30s</span>
+        <span id="tv-timer-label" style="font-size:14px;font-weight:700;color:var(--blue);min-width:40px;text-align:right">12s</span>
       </div>
       <input class="cfg-search" type="text" placeholder="Buscar por código ou descrição..." id="cfg-srch" oninput="renderCfgList()">
       <div class="cfg-selected-count">
-        <span id="cfg-count">14 de 20 selecionados</span>
+        <span id="cfg-count">0 selecionados</span>
         <button class="cfg-clear-btn" onclick="limparSelecao()">✕ Limpar tudo</button>
       </div>
-      <div class="cfg-list" id="cfg-list"><div class="cfg-item selected" onclick="toggleProduto(&#39;10351ZPE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10351ZPE</div>
-      <div class="cfg-item-desc" title="TORN BOIA GARDEN  3/4ZAMAC LEVE">TORN BOIA GARDEN  3/4ZAMAC LEVE</div>
-      <div class="cfg-item-grupo">TORNEIRAS DE BOIA</div>
-    </div><div class="cfg-item selected" onclick="toggleProduto(&#39;10351ZPRE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10351ZPRE</div>
-      <div class="cfg-item-desc" title="TORN BOIA GARDEN  3/4ZAMAC REFORCADA">TORN BOIA GARDEN  3/4ZAMAC REFORCADA</div>
-      <div class="cfg-item-grupo">TORNEIRAS DE BOIA</div>
-    </div><div class="cfg-item selected" onclick="toggleProduto(&#39;10840E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10840E</div>
-      <div class="cfg-item-desc" title="JUNCAO METAL GARDEN P/MAQ.LAVAR">JUNCAO METAL GARDEN P/MAQ.LAVAR</div>
-      <div class="cfg-item-grupo">JUNÇÕES</div>
-    </div><div class="cfg-item selected" onclick="toggleProduto(&#39;10857E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10857E</div>
-      <div class="cfg-item-desc" title="AUMENTO TORN.GARDEN ZAM.AM.1/2(A)CT">AUMENTO TORN.GARDEN ZAM.AM.1/2(A)CT</div>
-      <div class="cfg-item-grupo">AUMENTO AMARELO</div>
-    </div><div class="cfg-item selected" onclick="toggleProduto(&#39;10858E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10858E</div>
-      <div class="cfg-item-desc" title="AUMENTO TORN.GARDEN ZAM.AM.1/2(B)MD">AUMENTO TORN.GARDEN ZAM.AM.1/2(B)MD</div>
-      <div class="cfg-item-grupo">AUMENTO AMARELO</div>
-    </div><div class="cfg-item selected" onclick="toggleProduto(&#39;10859E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10859E</div>
-      <div class="cfg-item-desc" title="AUMENTO TORN.GARDEN ZAM.AM.1/2(C)LG">AUMENTO TORN.GARDEN ZAM.AM.1/2(C)LG</div>
-      <div class="cfg-item-grupo">AUMENTO AMARELO</div>
-    </div><div class="cfg-item selected" onclick="toggleProduto(&#39;10860E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10860E</div>
-      <div class="cfg-item-desc" title="AUMENTO TORN.GARDEN ZAM.AM.3/4(A)CT">AUMENTO TORN.GARDEN ZAM.AM.3/4(A)CT</div>
-      <div class="cfg-item-grupo">AUMENTO AMARELO</div>
-    </div><div class="cfg-item selected" onclick="toggleProduto(&#39;10861E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10861E</div>
-      <div class="cfg-item-desc" title="AUMENTO TORN.GARDEN ZAM.AM.3/4(B)MD">AUMENTO TORN.GARDEN ZAM.AM.3/4(B)MD</div>
-      <div class="cfg-item-grupo">AUMENTO AMARELO</div>
-    </div><div class="cfg-item selected" onclick="toggleProduto(&#39;10862E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10862E</div>
-      <div class="cfg-item-desc" title="AUMENTO TORN.GARDEN ZAM.AM.3/4(C)LG">AUMENTO TORN.GARDEN ZAM.AM.3/4(C)LG</div>
-      <div class="cfg-item-grupo">AUMENTO AMARELO</div>
-    </div><div class="cfg-item selected" onclick="toggleProduto(&#39;10870E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10870E</div>
-      <div class="cfg-item-desc" title="JUNCAO METAL GARDEN Y P/FILTRO 1/2">JUNCAO METAL GARDEN Y P/FILTRO 1/2</div>
-      <div class="cfg-item-grupo">JUNÇÕES</div>
-    </div><div class="cfg-item selected" onclick="toggleProduto(&#39;11701TG&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11701TG</div>
-      <div class="cfg-item-desc" title="ESGUICHO REV.GARDEN 1/2TRAD. 1170">ESGUICHO REV.GARDEN 1/2TRAD. 1170</div>
-      <div class="cfg-item-grupo">ESGUICHOS</div>
-    </div><div class="cfg-item selected" onclick="toggleProduto(&#39;11832G&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11832G</div>
-      <div class="cfg-item-desc" title="UNIAO ZAMAC GARDEN 1/2x1/2 P/TORN.">UNIAO ZAMAC GARDEN 1/2x1/2 P/TORN.</div>
-      <div class="cfg-item-grupo">BICOS DE TORNEIRA</div>
-    </div><div class="cfg-item selected" onclick="toggleProduto(&#39;11833G&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11833G</div>
-      <div class="cfg-item-desc" title="UNIAO ZAMAC GARDEN 3/4x1/2 P/TORN.">UNIAO ZAMAC GARDEN 3/4x1/2 P/TORN.</div>
-      <div class="cfg-item-grupo">BICOS DE TORNEIRA</div>
-    </div><div class="cfg-item selected" onclick="toggleProduto(&#39;11834G&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11834G</div>
-      <div class="cfg-item-desc" title="UNIAO ZAMAC GARDEN 3/4x3/4 P/TORN.">UNIAO ZAMAC GARDEN 3/4x3/4 P/TORN.</div>
-      <div class="cfg-item-grupo">BICOS DE TORNEIRA</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10112BSPE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10112BSPE</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENMZAMAC (01)1/2X1/2">ESPIG.FIXO GARDENMZAMAC (01)1/2X1/2</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10116BSPE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10116BSPE</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENMZAMAC (02)3/4X3/4">ESPIG.FIXO GARDENMZAMAC (02)3/4X3/4</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10120BSPE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10120BSPE</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENMZAMAC (03)1X1">ESPIG.FIXO GARDENMZAMAC (03)1X1</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10160E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10160E</div>
-      <div class="cfg-item-desc" title="TEE EMEND.AR/AG ZAMAC (A)1/410160">TEE EMEND.AR/AG ZAMAC (A)1/410160</div>
-      <div class="cfg-item-grupo">EMENDAS TEE</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10161E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10161E</div>
-      <div class="cfg-item-desc" title="TEE EMEND.AR/AG ZAMAC (B)5/1610161">TEE EMEND.AR/AG ZAMAC (B)5/1610161</div>
-      <div class="cfg-item-grupo">EMENDAS TEE</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10162E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10162E</div>
-      <div class="cfg-item-desc" title="TEE EMEND.AR/AG ZAMAC (C)3/810162">TEE EMEND.AR/AG ZAMAC (C)3/810162</div>
-      <div class="cfg-item-grupo">EMENDAS TEE</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10163E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10163E</div>
-      <div class="cfg-item-desc" title="TEE EMEND.AR/AG ZAMAC (D)1/210163">TEE EMEND.AR/AG ZAMAC (D)1/210163</div>
-      <div class="cfg-item-grupo">EMENDAS TEE</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10164E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10164E</div>
-      <div class="cfg-item-desc" title="TEE EMEND.AR/AG ZAMAC (E)3/410164">TEE EMEND.AR/AG ZAMAC (E)3/410164</div>
-      <div class="cfg-item-grupo">EMENDAS TEE</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10173CRE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10173CRE</div>
-      <div class="cfg-item-desc" title="TEE ZAMAC GARDEN 1/2 RR CROMADO">TEE ZAMAC GARDEN 1/2 RR CROMADO</div>
-      <div class="cfg-item-grupo">EMENDAS TEE</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10174CRE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10174CRE</div>
-      <div class="cfg-item-desc" title="TEE ZAMAC GARDEN 3/4 RR CROMADO">TEE ZAMAC GARDEN 3/4 RR CROMADO</div>
-      <div class="cfg-item-grupo">EMENDAS TEE</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10400E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10400E</div>
-      <div class="cfg-item-desc" title="ENGATE RAP.AR GARDEN ZM1/4FEM10400">ENGATE RAP.AR GARDEN ZM1/4FEM10400</div>
-      <div class="cfg-item-grupo">ENGATES AR</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10401E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10401E</div>
-      <div class="cfg-item-desc" title="ENGATE RAP.AR GARDEN ZM1/4MAC10401">ENGATE RAP.AR GARDEN ZM1/4MAC10401</div>
-      <div class="cfg-item-grupo">ENGATES AR</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10402E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10402E</div>
-      <div class="cfg-item-desc" title="ENGATE RAP.AR GARDEN ZM1/2FEM10402">ENGATE RAP.AR GARDEN ZM1/2FEM10402</div>
-      <div class="cfg-item-grupo">ENGATES AR</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10403E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10403E</div>
-      <div class="cfg-item-desc" title="ENGATE RAP.AR GARDEN ZM1/2MAC10403">ENGATE RAP.AR GARDEN ZM1/2MAC10403</div>
-      <div class="cfg-item-grupo">ENGATES AR</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10603E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10603E</div>
-      <div class="cfg-item-desc" title="NIPLE ZAMAC AMARELO GARDEN (A) 1/2X1/2">NIPLE ZAMAC AMARELO GARDEN (A) 1/2X1/2</div>
-      <div class="cfg-item-grupo">NIPLES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10604E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10604E</div>
-      <div class="cfg-item-desc" title="NIPLE ZAMAC AMARELO GARDEN (C) 3/4X3/4">NIPLE ZAMAC AMARELO GARDEN (C) 3/4X3/4</div>
-      <div class="cfg-item-grupo">NIPLES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10605E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10605E</div>
-      <div class="cfg-item-desc" title="NIPLE ZAMAC AMARELO GARDEN (D) 1X1">NIPLE ZAMAC AMARELO GARDEN (D) 1X1</div>
-      <div class="cfg-item-grupo">NIPLES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10614E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10614E</div>
-      <div class="cfg-item-desc" title="NIPLE ZAMAC AMARELO GARDEN (B) 3/4X1/2">NIPLE ZAMAC AMARELO GARDEN (B) 3/4X1/2</div>
-      <div class="cfg-item-grupo">NIPLES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10638CRE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10638CRE</div>
-      <div class="cfg-item-desc" title="PLUG ZAMAC GARDEN  1/2 RR MACHO CROMADO">PLUG ZAMAC GARDEN  1/2 RR MACHO CROMADO</div>
-      <div class="cfg-item-grupo">PLUGS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10638E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10638E</div>
-      <div class="cfg-item-desc" title="PLUG ZAMAC GARDEN  1/2 RR MACHO AMARELO">PLUG ZAMAC GARDEN  1/2 RR MACHO AMARELO</div>
-      <div class="cfg-item-grupo">PLUGS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10639CRE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10639CRE</div>
-      <div class="cfg-item-desc" title="PLUG ZAMAC GARDEN  3/4 RR MACHO CROMADO">PLUG ZAMAC GARDEN  3/4 RR MACHO CROMADO</div>
-      <div class="cfg-item-grupo">PLUGS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10639E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10639E</div>
-      <div class="cfg-item-desc" title="PLUG ZAMAC GARDEN  3/4 RR MACHO AMARELO">PLUG ZAMAC GARDEN  3/4 RR MACHO AMARELO</div>
-      <div class="cfg-item-grupo">PLUGS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10856CRE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10856CRE</div>
-      <div class="cfg-item-desc" title="BUCHA  RED.GARDEN ZAMAC CR. 3/4x1/2">BUCHA  RED.GARDEN ZAMAC CR. 3/4x1/2</div>
-      <div class="cfg-item-grupo">BUCHAS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10856E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10856E</div>
-      <div class="cfg-item-desc" title="BUCHA  RED.GARDEN ZAMAC AM. 3/4x1/2">BUCHA  RED.GARDEN ZAMAC AM. 3/4x1/2</div>
-      <div class="cfg-item-grupo">BUCHAS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10863CRE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10863CRE</div>
-      <div class="cfg-item-desc" title="BUCHA  AUMENTO GARDEN ZAM.CR1/2x3/4">BUCHA  AUMENTO GARDEN ZAM.CR1/2x3/4</div>
-      <div class="cfg-item-grupo">BUCHAS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10863E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10863E</div>
-      <div class="cfg-item-desc" title="BUCHA  AUMENTO GARDEN ZAM.AM1/2x3/4">BUCHA  AUMENTO GARDEN ZAM.AM1/2x3/4</div>
-      <div class="cfg-item-grupo">BUCHAS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10880CRE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10880CRE</div>
-      <div class="cfg-item-desc" title="LUVA ZAMAC GARDEN 1/2 RR CROMADA">LUVA ZAMAC GARDEN 1/2 RR CROMADA</div>
-      <div class="cfg-item-grupo">LUVAS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10885CRE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10885CRE</div>
-      <div class="cfg-item-desc" title="LUVA ZAMAC GARDEN 3/4 RR CROMADA">LUVA ZAMAC GARDEN 3/4 RR CROMADA</div>
-      <div class="cfg-item-grupo">LUVAS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10893CRE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10893CRE</div>
-      <div class="cfg-item-desc" title="COTOVELO ZAMAC GARDEN 90X1/2 RR CROMADO">COTOVELO ZAMAC GARDEN 90X1/2 RR CROMADO</div>
-      <div class="cfg-item-grupo">COTOVELOS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10894CRE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10894CRE</div>
-      <div class="cfg-item-desc" title="COTOVELO ZAMAC GARDEN 90X3/4 RR CROMADO">COTOVELO ZAMAC GARDEN 90X3/4 RR CROMADO</div>
-      <div class="cfg-item-grupo">COTOVELOS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10897CRE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10897CRE</div>
-      <div class="cfg-item-desc" title="COTOVELO ZAMAC GARDEN 1/2 MF CROMADO">COTOVELO ZAMAC GARDEN 1/2 MF CROMADO</div>
-      <div class="cfg-item-grupo">COTOVELOS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10898CRE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10898CRE</div>
-      <div class="cfg-item-desc" title="COTOVELO ZAMAC GARDEN 3/4 MF CROMADO">COTOVELO ZAMAC GARDEN 3/4 MF CROMADO</div>
-      <div class="cfg-item-grupo">COTOVELOS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10899CRE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10899CRE</div>
-      <div class="cfg-item-desc" title="COTOVELO ZAMAC GARDEN 45X1/2 RR CR">COTOVELO ZAMAC GARDEN 45X1/2 RR CR</div>
-      <div class="cfg-item-grupo">COTOVELOS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;10900CRE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">10900CRE</div>
-      <div class="cfg-item-desc" title="COTOVELO ZAMAC GARDEN 45X3/4 RR CR">COTOVELO ZAMAC GARDEN 45X3/4 RR CR</div>
-      <div class="cfg-item-grupo">COTOVELOS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11003E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11003E</div>
-      <div class="cfg-item-desc" title="BICO DE AR GARDEN P/LIMP.R1/411003">BICO DE AR GARDEN P/LIMP.R1/411003</div>
-      <div class="cfg-item-grupo">PISTOLA AR</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11006E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11006E</div>
-      <div class="cfg-item-desc" title="BICO DE AR GARDEN P/PULV.R1/411006">BICO DE AR GARDEN P/PULV.R1/411006</div>
-      <div class="cfg-item-grupo">PISTOLA AR</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11101E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11101E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(04)1/4x1/4">ESPIG.FIXO GARDENM(04)1/4x1/4</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11102E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11102E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(05)1/4x5/16">ESPIG.FIXO GARDENM(05)1/4x5/16</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11103E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11103E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(06)1/4x3/8">ESPIG.FIXO GARDENM(06)1/4x3/8</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11104E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11104E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(07)1/4x1/2">ESPIG.FIXO GARDENM(07)1/4x1/2</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11105E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11105E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(08)3/8x1/4">ESPIG.FIXO GARDENM(08)3/8x1/4</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11106E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11106E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(09)3/8x5/16">ESPIG.FIXO GARDENM(09)3/8x5/16</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11107E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11107E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(10)3/8x3/8">ESPIG.FIXO GARDENM(10)3/8x3/8</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11108E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11108E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(11)3/8x1/2">ESPIG.FIXO GARDENM(11)3/8x1/2</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11109E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11109E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(12)1/2x1/4">ESPIG.FIXO GARDENM(12)1/2x1/4</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11110E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11110E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(13)1/2x5/16">ESPIG.FIXO GARDENM(13)1/2x5/16</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11111E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11111E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(14)1/2x3/8">ESPIG.FIXO GARDENM(14)1/2x3/8</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11112E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11112E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(15)1/2x1/2">ESPIG.FIXO GARDENM(15)1/2x1/2</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11113E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11113E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(17)1/2x3/4">ESPIG.FIXO GARDENM(17)1/2x3/4</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11114E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11114E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(20)3/4x3/8">ESPIG.FIXO GARDENM(20)3/4x3/8</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11115E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11115E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(21)3/4x1/2">ESPIG.FIXO GARDENM(21)3/4x1/2</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11116E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11116E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(23)3/4x3/4">ESPIG.FIXO GARDENM(23)3/4x3/4</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11117E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11117E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(24)3/4x1">ESPIG.FIXO GARDENM(24)3/4x1</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11118E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11118E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(25)1x1/2">ESPIG.FIXO GARDENM(25)1x1/2</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11119E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11119E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(26)1x3/4">ESPIG.FIXO GARDENM(26)1x3/4</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11120E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11120E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(27)1x1">ESPIG.FIXO GARDENM(27)1x1</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11124E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11124E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(16)1/2x5/8">ESPIG.FIXO GARDENM(16)1/2x5/8</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11125E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11125E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(22)3/4x5/8">ESPIG.FIXO GARDENM(22)3/4x5/8</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11126E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11126E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(01)1/8x1/4">ESPIG.FIXO GARDENM(01)1/8x1/4</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11127E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11127E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(02)1/8x5/16">ESPIG.FIXO GARDENM(02)1/8x5/16</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11128E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11128E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(03)1/8x3/8">ESPIG.FIXO GARDENM(03)1/8x3/8</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11129E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11129E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(19)3/4x5/16">ESPIG.FIXO GARDENM(19)3/4x5/16</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11136E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11136E</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(18)3/4x1/4">ESPIG.FIXO GARDENM(18)3/4x1/4</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11137G&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11137G</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(28)11/4x11/4">ESPIG.FIXO GARDENM(28)11/4x11/4</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11138BSPG&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11138BSPG</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(29)11/2x11/2">ESPIG.FIXO GARDENM(29)11/2x11/2</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11139G&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11139G</div>
-      <div class="cfg-item-desc" title="ESPIG.FIXO GARDENM(30)2x2">ESPIG.FIXO GARDENM(30)2x2</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11170E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11170E</div>
-      <div class="cfg-item-desc" title="ESPIG.GIRAT.GARDENF(1)1/4x1/4">ESPIG.GIRAT.GARDENF(1)1/4x1/4</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11171E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11171E</div>
-      <div class="cfg-item-desc" title="ESPIG.GIRAT.GARDENF(2)1/4x5/16">ESPIG.GIRAT.GARDENF(2)1/4x5/16</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11172E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11172E</div>
-      <div class="cfg-item-desc" title="ESPIG.GIRAT.GARDENF(3)1/4x3/8">ESPIG.GIRAT.GARDENF(3)1/4x3/8</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11175E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11175E</div>
-      <div class="cfg-item-desc" title="ESPIG.GIRAT.GARDENF(6)3/8x3/8">ESPIG.GIRAT.GARDENF(6)3/8x3/8</div>
-      <div class="cfg-item-grupo">ESPIGÕES</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11303E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11303E</div>
-      <div class="cfg-item-desc" title="ENGATE RAPIDO GARDEN AGUA 3/4x1/2">ENGATE RAPIDO GARDEN AGUA 3/4x1/2</div>
-      <div class="cfg-item-grupo">ENGATES AGUA</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11350LE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11350LE</div>
-      <div class="cfg-item-desc" title="TORN BOIA GARDEN  1/2 BOIA LATAO">TORN BOIA GARDEN  1/2 BOIA LATAO</div>
-      <div class="cfg-item-grupo">TORNEIRAS DE BOIA</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11350PE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11350PE</div>
-      <div class="cfg-item-desc" title="TORN BOIA GARDEN  1/2 BOIA PVC">TORN BOIA GARDEN  1/2 BOIA PVC</div>
-      <div class="cfg-item-grupo">TORNEIRAS DE BOIA</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11351NLE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11351NLE</div>
-      <div class="cfg-item-desc" title="TORN BOIA GARDEN  3/4BOIA LATAO">TORN BOIA GARDEN  3/4BOIA LATAO</div>
-      <div class="cfg-item-grupo">TORNEIRAS DE BOIA</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11351NPE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11351NPE</div>
-      <div class="cfg-item-desc" title="TORN BOIA GARDEN  3/4BOIA PVC LEVE">TORN BOIA GARDEN  3/4BOIA PVC LEVE</div>
-      <div class="cfg-item-grupo">TORNEIRAS DE BOIA</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11351RRE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11351RRE</div>
-      <div class="cfg-item-desc" title="TORN BOIA GARDEN  3/4BOIA PVC REF">TORN BOIA GARDEN  3/4BOIA PVC REF</div>
-      <div class="cfg-item-grupo">TORNEIRAS DE BOIA</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11352PE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11352PE</div>
-      <div class="cfg-item-desc" title="TORN BOIA GARDEN 1 BOIA PVC">TORN BOIA GARDEN 1 BOIA PVC</div>
-      <div class="cfg-item-grupo">TORNEIRAS DE BOIA</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11353PG&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11353PG</div>
-      <div class="cfg-item-desc" title="TORN BOIA GARDEN 1.1/4 BOIA PVC">TORN BOIA GARDEN 1.1/4 BOIA PVC</div>
-      <div class="cfg-item-grupo">TORNEIRAS DE BOIA</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11354PG&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11354PG</div>
-      <div class="cfg-item-desc" title="TORN BOIA GARDEN 1.1/2 BOIA PVC">TORN BOIA GARDEN 1.1/2 BOIA PVC</div>
-      <div class="cfg-item-grupo">TORNEIRAS DE BOIA</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11355PG&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11355PG</div>
-      <div class="cfg-item-desc" title="TORN BOIA GARDEN 2 BOIA PVC">TORN BOIA GARDEN 2 BOIA PVC</div>
-      <div class="cfg-item-grupo">TORNEIRAS DE BOIA</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11361PE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11361PE</div>
-      <div class="cfg-item-desc" title="TORN BOIA GARDEN VAZ.TOTAL BOIA PVC 3/4">TORN BOIA GARDEN VAZ.TOTAL BOIA PVC 3/4</div>
-      <div class="cfg-item-grupo">TORNEIRAS DE BOIA</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11362PE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11362PE</div>
-      <div class="cfg-item-desc" title="TORN BOIA GARDEN VAZ.TOTAL BOIA PVC 1">TORN BOIA GARDEN VAZ.TOTAL BOIA PVC 1</div>
-      <div class="cfg-item-grupo">TORNEIRAS DE BOIA</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11400E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11400E</div>
-      <div class="cfg-item-desc" title="ENGATE RAP.AR GARDEN 1/4FEMEA11400">ENGATE RAP.AR GARDEN 1/4FEMEA11400</div>
-      <div class="cfg-item-grupo">ENGATES AR</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11401E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11401E</div>
-      <div class="cfg-item-desc" title="ENGATE RAP.AR GARDEN 1/4MACHO11401">ENGATE RAP.AR GARDEN 1/4MACHO11401</div>
-      <div class="cfg-item-grupo">ENGATES AR</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11404E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11404E</div>
-      <div class="cfg-item-desc" title="PINO ENG.RAP.AR  MACHO GARDEN 1/4">PINO ENG.RAP.AR  MACHO GARDEN 1/4</div>
-      <div class="cfg-item-grupo">ENGATES AR</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11405E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11405E</div>
-      <div class="cfg-item-desc" title="PINO ENG.RAP.AR  FEMEA GARDEN 1/4">PINO ENG.RAP.AR  FEMEA GARDEN 1/4</div>
-      <div class="cfg-item-grupo">ENGATES AR</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11406E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11406E</div>
-      <div class="cfg-item-desc" title="PINO ENG.RAP.AR C/ESC(A)1/4 GARDEN">PINO ENG.RAP.AR C/ESC(A)1/4 GARDEN</div>
-      <div class="cfg-item-grupo">ENGATES AR</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11407E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11407E</div>
-      <div class="cfg-item-desc" title="PINO ENG.RAP.AR C/ESC(B)5/16GARDEN">PINO ENG.RAP.AR C/ESC(B)5/16GARDEN</div>
-      <div class="cfg-item-grupo">ENGATES AR</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11408E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11408E</div>
-      <div class="cfg-item-desc" title="PINO ENG.RAP.AR C/ESC(C)3/8 GARDEN">PINO ENG.RAP.AR C/ESC(C)3/8 GARDEN</div>
-      <div class="cfg-item-grupo">ENGATES AR</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11500E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11500E</div>
-      <div class="cfg-item-desc" title="EMENDA MANGLATAOGARDEN RAP 1/2">EMENDA MANGLATAOGARDEN RAP 1/2</div>
-      <div class="cfg-item-grupo">EMENDAS MANG</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11701PRG&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11701PRG</div>
-      <div class="cfg-item-desc" title="ESGUICHO REV.GARDEN 1/2PRATA 11701">ESGUICHO REV.GARDEN 1/2PRATA 11701</div>
-      <div class="cfg-item-grupo">ESGUICHOS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11715TG&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11715TG</div>
-      <div class="cfg-item-desc" title="ESGUICHO REV.GARDEN 1/2TRAD.C/PINO ENG">ESGUICHO REV.GARDEN 1/2TRAD.C/PINO ENG</div>
-      <div class="cfg-item-grupo">ESGUICHOS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11719E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11719E</div>
-      <div class="cfg-item-desc" title="EMENDA P/AR RETA GARDEN(A)1/411719">EMENDA P/AR RETA GARDEN(A)1/411719</div>
-      <div class="cfg-item-grupo">EMENDAS MANG</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11720E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11720E</div>
-      <div class="cfg-item-desc" title="EMENDA P/AR RETA GARDEN(B)5/161720">EMENDA P/AR RETA GARDEN(B)5/161720</div>
-      <div class="cfg-item-grupo">EMENDAS MANG</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11721E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11721E</div>
-      <div class="cfg-item-desc" title="EMENDA P/AR RETA GARDEN(C)3/811721">EMENDA P/AR RETA GARDEN(C)3/811721</div>
-      <div class="cfg-item-grupo">EMENDAS MANG</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11740E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11740E</div>
-      <div class="cfg-item-desc" title="ESGUICHO PADRAO GARDEN METAL TIPO MAXI">ESGUICHO PADRAO GARDEN METAL TIPO MAXI</div>
-      <div class="cfg-item-grupo">ESGUICHOS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11750ZG&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11750ZG</div>
-      <div class="cfg-item-desc" title="ESGUICHO REV.GARDEN MINIZINC.1175">ESGUICHO REV.GARDEN MINIZINC.1175</div>
-      <div class="cfg-item-grupo">ESGUICHOS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11824G&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11824G</div>
-      <div class="cfg-item-desc" title="EMENDA MANGZAMACGARDEN 1/2">EMENDA MANGZAMACGARDEN 1/2</div>
-      <div class="cfg-item-grupo">EMENDAS MANG</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11825G&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11825G</div>
-      <div class="cfg-item-desc" title="EMENDA MANGZAMACGARDEN 3/4">EMENDA MANGZAMACGARDEN 3/4</div>
-      <div class="cfg-item-grupo">EMENDAS MANG</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11850E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11850E</div>
-      <div class="cfg-item-desc" title="EXTENSAO TORN.GARDEN ZAM.CR1/2(A)CT">EXTENSAO TORN.GARDEN ZAM.CR1/2(A)CT</div>
-      <div class="cfg-item-grupo">EXTENSOES CROMADAS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11851E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11851E</div>
-      <div class="cfg-item-desc" title="EXTENSAO TORN.GARDEN ZAM.CR1/2(B)MD">EXTENSAO TORN.GARDEN ZAM.CR1/2(B)MD</div>
-      <div class="cfg-item-grupo">EXTENSOES CROMADAS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11852E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11852E</div>
-      <div class="cfg-item-desc" title="EXTENSAO TORN.GARDEN ZAM.CR1/2(C)LG">EXTENSAO TORN.GARDEN ZAM.CR1/2(C)LG</div>
-      <div class="cfg-item-grupo">EXTENSOES CROMADAS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11853E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11853E</div>
-      <div class="cfg-item-desc" title="EXTENSAO TORN.GARDEN ZAM.CR3/4(A)CT">EXTENSAO TORN.GARDEN ZAM.CR3/4(A)CT</div>
-      <div class="cfg-item-grupo">EXTENSOES CROMADAS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11854E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11854E</div>
-      <div class="cfg-item-desc" title="EXTENSAO TORN.GARDEN ZAM.CR3/4(B)MD">EXTENSAO TORN.GARDEN ZAM.CR3/4(B)MD</div>
-      <div class="cfg-item-grupo">EXTENSOES CROMADAS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11855E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11855E</div>
-      <div class="cfg-item-desc" title="EXTENSAO TORN.GARDEN ZAM.CR3/4(C)LG">EXTENSAO TORN.GARDEN ZAM.CR3/4(C)LG</div>
-      <div class="cfg-item-grupo">EXTENSOES CROMADAS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;11901E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">11901E</div>
-      <div class="cfg-item-desc" title="ESGUICHO PRESSAO JET GARDEN LONGO 1/2">ESGUICHO PRESSAO JET GARDEN LONGO 1/2</div>
-      <div class="cfg-item-grupo">ESGUICHOS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;12361PE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">12361PE</div>
-      <div class="cfg-item-desc" title="TORN BOIA GARDEN VAZ.TOTAL PVC 3/4">TORN BOIA GARDEN VAZ.TOTAL PVC 3/4</div>
-      <div class="cfg-item-grupo">TORNEIRAS DE BOIA</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;12362PE&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">12362PE</div>
-      <div class="cfg-item-desc" title="TORN BOIA GARDEN VAZ.TOTAL PVC1">TORN BOIA GARDEN VAZ.TOTAL PVC1</div>
-      <div class="cfg-item-grupo">TORNEIRAS DE BOIA</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;12701G&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">12701G</div>
-      <div class="cfg-item-desc" title="ESGUICHO REV.GARDEN 1/2 PLAST.  1270">ESGUICHO REV.GARDEN 1/2 PLAST.  1270</div>
-      <div class="cfg-item-grupo">ESGUICHOS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;12702G&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">12702G</div>
-      <div class="cfg-item-desc" title="ESGUICHO REV.GARDEN 3/4PLAST. 1270">ESGUICHO REV.GARDEN 3/4PLAST. 1270</div>
-      <div class="cfg-item-grupo">ESGUICHOS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;12705G&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">12705G</div>
-      <div class="cfg-item-desc" title="ESGUICHO REV.GARDEN 3/4PLAST.C/PINO ENG">ESGUICHO REV.GARDEN 3/4PLAST.C/PINO ENG</div>
-      <div class="cfg-item-grupo">ESGUICHOS</div>
-    </div><div class="cfg-item " onclick="toggleProduto(&#39;13705E&#39;)">
-      <div class="cfg-checkbox"><span class="cfg-checkmark">✓</span></div>
-      <div class="cfg-item-cod">13705E</div>
-      <div class="cfg-item-desc" title="IRRIGADOR GARDEN GIR.1/22HASTES AL.SUP.">IRRIGADOR GARDEN GIR.1/22HASTES AL.SUP.</div>
-      <div class="cfg-item-grupo">IRRIGADORES</div>
-    </div></div>
+      <div class="cfg-list" id="cfg-list"></div>
     </div>
     <div class="cfg-footer">
-      <div class="cfg-footer-info" id="cfg-footer-info">14 produtos selecionados</div>
+      <div class="cfg-footer-info" id="cfg-footer-info">Selecione os produtos desejados</div>
       <button class="cfg-save" id="cfg-save-btn" onclick="salvarConfig()">✓ Salvar e fechar</button>
     </div>
   </div>
@@ -3691,6 +3068,19 @@ const STORAGE_KEY = 'monitorprecos_tv_produtos'
 const TIMER_KEY   = 'monitorprecos_tv_timer'
 
 let tvTimerSeg = (() => { try { return parseInt(localStorage.getItem(TIMER_KEY)) || 12 } catch { return 12 } })()
+
+function toggleFullscreen() {
+  const btn = document.getElementById('btn-fullscreen')
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().then(() => { btn.textContent = '✕ Sair' }).catch(() => {})
+  } else {
+    document.exitFullscreen().then(() => { btn.textContent = '⛶' }).catch(() => {})
+  }
+}
+document.addEventListener('fullscreenchange', () => {
+  const btn = document.getElementById('btn-fullscreen')
+  if (btn) btn.textContent = document.fullscreenElement ? '✕ Sair' : '⛶'
+})
 
 function tvTimerChange(val) {
   tvTimerSeg = parseInt(val)
@@ -4016,20 +3406,21 @@ function renderTV() {
     if (!def.dados || def.dados.length === 0) return
     const tvProds = tvSelecionados.length > 0
       ? tvSelecionados.map(cod => def.prods.find(p => p.codG.trim() === cod)).filter(Boolean)
-      : def.prods.slice(0, 20)
+      : []
     const datas = def.dados.map(r => r[def.dataField]).filter(Boolean)
     const ultima = datas.length ? fmtData(datas.sort().reverse()[0]) : '—'
     slides.push({ ...def, tvProds, ultima })
   })
 
-  // ── Slide comparativo final ──
-  slides.push({ id:'comparativo', comparativo:true })
+  // ── Slides comparativos: dividir em grupos de 10 ──
+  slides.push({ id:'comparativo1', comparativo:true, compPart:1 })
+  slides.push({ id:'comparativo2', comparativo:true, compPart:2 })
 
   // Render carousel
   const carousel = document.getElementById('tv-carousel')
   carousel.innerHTML = slides.map((s, si) =>
     `<div class="tv-slide" id="tvslide-${si}" style="display:${si===0?'block':'none'};padding:0 28px 20px">${
-      s.comparativo ? renderSlideComparativo(clientesDefs) : renderSlideCliente(s)
+      s.comparativo ? renderSlideComparativo(clientesDefs, s.compPart) : renderSlideCliente(s)
     }</div>`
   ).join('')
 
@@ -4065,14 +3456,16 @@ function renderSlideCliente(s) {
     if (pg < mn-0.005) win++; else if (pg > mn+0.005) loss++; else tie++
   })
 
+  const GRID_SIZE = 20
   let cards = ''
-  if (tvProds.length === 0) {
-    cards = `<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--muted)">
-      <div style="font-size:36px">📺</div>
-      <div style="margin-top:12px">Nenhum produto configurado encontrado neste cliente</div>
-    </div>`
-  } else {
-    tvProds.forEach(p => {
+  // Sempre gerar 20 células
+  for (let idx = 0; idx < GRID_SIZE; idx++) {
+    const p = tvProds[idx]
+    if (!p) {
+      cards += `<div class="tv-card-empty"></div>`
+      continue
+    }
+    {
       const pg = p.pares[gardenSlug]?.preco
       const nc = concDef.filter(c => c.slug !== gardenSlug && p.pares[c.slug])
       const classe = !nc.length ? 'sem' : (() => {
@@ -4084,7 +3477,6 @@ function renderSlideCliente(s) {
       const corGarden = classe === 'loss' ? '#f05252' : 'var(--blue)'
       cards += `<div class="tv-card ${classe}">
         <div class="tv-card-cod">${esc(p.codG)}</div>
-        <div class="tv-card-desc" title="${desc}">${desc}</div>
         <div class="tv-card-preco-garden" style="color:${corGarden}">${fmt(pg)}</div>
         <div class="tv-card-concorrentes">`
       if (!nc.length) {
@@ -4106,7 +3498,7 @@ function renderSlideCliente(s) {
         })
       }
       cards += `</div></div>`
-    })
+    }
   }
 
   return `
@@ -4115,7 +3507,7 @@ function renderSlideCliente(s) {
         <span style="font-size:24px">${icone}</span>
         <div>
           <div class="tv-title" style="color:${cor}">${cliente}</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:2px">Produtos selecionados no Modo TV</div>
+
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:20px;">
@@ -4131,17 +3523,18 @@ function renderSlideCliente(s) {
     <div class="tv-grid">${cards}</div>`
 }
 
-function renderSlideComparativo(clientesDefs) {
+function renderSlideComparativo(clientesDefs, parte) {
   const clientesAtivos = clientesDefs.filter(d => d.dados && d.dados.length > 0).map(d => ({
     ...d,
     tvProds: tvSelecionados.length > 0
       ? tvSelecionados.map(cod => d.prods.find(p => p.codG.trim() === cod)).filter(Boolean)
-      : d.prods.slice(0, 20)
+      : []
   }))
 
   if (!clientesAtivos.length) return `<div style="text-align:center;padding:80px;color:var(--muted)">Nenhum dado carregado</div>`
 
-  const allCods = tvSelecionados.length > 0 ? tvSelecionados.filter(cod => clientesAtivos.some(cl => cl.tvProds.find(p => p.codG.trim() === cod))) : [...new Set(clientesAtivos.flatMap(cl => cl.tvProds.map(p => p.codG.trim())))]
+  const allCodsBase = tvSelecionados.length > 0 ? tvSelecionados.filter(cod => clientesAtivos.some(cl => cl.tvProds.find(p => p.codG.trim() === cod))) : [...new Set(clientesAtivos.flatMap(cl => cl.tvProds.map(p => p.codG.trim())))]
+  const allCods = parte === 2 ? allCodsBase.slice(10) : allCodsBase.slice(0, 10)
   if (!allCods.length) return `<div style="text-align:center;padding:80px;color:var(--muted)">
     <div style="font-size:36px">⚙️</div><div style="margin-top:12px">Configure os produtos no <b>Config TV</b></div></div>`
 
@@ -4198,8 +3591,8 @@ function renderSlideComparativo(clientesDefs) {
       <div style="display:flex;align-items:center;gap:14px;">
         <span style="font-size:24px">📊</span>
         <div>
-          <div class="tv-title" style="color:#a855f7">Comparativo — Preço Garden por Cliente</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:2px">${allCods.length} produto(s) × ${clientesAtivos.length} cliente(s) &nbsp;·&nbsp; <span style="color:#22c47d">■</span> menor &nbsp;·&nbsp; <span style="color:#f05252">■</span> maior</div>
+          <div class="tv-title" style="color:#a855f7">Comparativo — Preço Garden por Cliente ${parte === 2 ? "(11–20)" : "(1–10)"}</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:2px">${allCodsBase.length} produto(s) × ${clientesAtivos.length} cliente(s) &nbsp;·&nbsp; <span style="color:#22c47d">■</span> menor &nbsp;·&nbsp; <span style="color:#f05252">■</span> maior</div>
         </div>
       </div>
     </div>
@@ -4293,13 +3686,14 @@ function renderCfgList() {
     (p.grupo || '').toLowerCase().includes(q)
   )
 
-  // Ordena: selecionados primeiro
+  // Selecionados primeiro na ordem de seleção, depois os demais em ordem alfabética
   lista.sort((a, b) => {
-    const sa = tvSelecionados.includes(a.codG.trim())
-    const sb = tvSelecionados.includes(b.codG.trim())
-    if (sa && !sb) return -1
-    if (!sa && sb) return 1
-    return a.codG.localeCompare(b.codG)
+    const ia = tvSelecionados.indexOf(a.codG.trim())
+    const ib = tvSelecionados.indexOf(b.codG.trim())
+    if (ia !== -1 && ib !== -1) return ia - ib   // ambos selecionados: ordem de seleção
+    if (ia !== -1) return -1                       // só a selecionado: vem primeiro
+    if (ib !== -1) return 1                        // só b selecionado: vem primeiro
+    return a.codG.localeCompare(b.codG)            // nenhum: alfabético
   })
 
   const n = tvSelecionados.length
