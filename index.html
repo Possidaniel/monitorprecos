@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0053)file:///C:/Users/daniel.possi/Downloads/index_58.html -->
+<!-- saved from url=(0053)file:///C:/Users/daniel.possi/Downloads/index_54.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -637,29 +637,30 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
 .cfg-save:disabled { opacity: .4; cursor: not-allowed; }
 </style>
 </head>
-<body class="tv-mode">
+<body class="">
 
 <!-- ── Header ── -->
 <div id="hdr">
   <div style="display:flex;align-items:center;gap:16px;">
-    <div id="site-logo-wrap" style="display:flex;align-items:center;gap:12px;"><div style="font-size:16px;font-weight:800;color:#a855f7;">📺 MODO TV</div></div>
+    <div id="site-logo-wrap" style="display:flex;align-items:center;gap:12px;"><div style="font-size:16px;font-weight:800;color:#4a8ff7;">📊 COFEMA</div></div>
     <div style="width:1px;height:28px;background:var(--bord);"></div>
     <div class="logo">Monitor<b>Preços</b></div>
   </div>
   <div class="hdr-r">
     <div class="mode-tabs">
-      <button class="mode-tab" id="tab-normal" onclick="setMode(&#39;normal&#39;)">📊 Cofema</button>
+      <button class="mode-tab on" id="tab-normal" onclick="setMode(&#39;normal&#39;)">📊 Cofema</button>
       <button class="mode-tab" id="tab-eltr" onclick="setMode(&#39;eltr&#39;)">🏪 Eletroleste</button>
-      <button class="mode-tab on" id="tab-tv" onclick="setMode(&#39;tv&#39;)">📺 Modo TV</button>
+      <button class="mode-tab" id="tab-tv" onclick="setMode(&#39;tv&#39;)">📺 Modo TV</button>
       <button class="mode-tab" id="tab-fera" onclick="setMode(&#39;fera&#39;)">🦁 Fera Atacado</button>
       <button class="mode-tab" id="tab-cdl" onclick="setMode(&#39;cdl&#39;)">🏬 Casa do Lojista</button>
       <button class="mode-tab" id="tab-construja" onclick="setMode(&#39;construja&#39;)">🏗️ ConstruJá</button>
+      <button class="mode-tab" id="tab-config" onclick="setMode(&#39;config&#39;)">⚙️ Configurações</button>
     </div>
     <button class="btn-refresh" id="btn-cfg" onclick="abrirConfig()" title="Configurar produtos do Modo TV">⚙ Config TV</button>
     <button class="btn-refresh" id="btn-fullscreen" onclick="toggleFullscreen()" title="Tela cheia">⛶</button>
     <span><span class="dot"></span>ao vivo</span>
     <span class="pill" id="pill-tot">126 produtos</span>
-    <span class="pill" id="pill-data">22/05/2026, 14:05</span>
+    <span class="pill" id="pill-data">28/05/2026, 14:32</span>
   </div>
 </div>
 
@@ -667,7 +668,7 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
 <!-- ── Sub-header Cofema ── -->
 <div id="main-subhdr" style="display:none;align-items:center;justify-content:space-between;padding:18px 28px 14px;border-bottom:1px solid var(--bord2);margin-bottom:20px;">
   <div style="display:flex;align-items:center;gap:16px;">
-    <div id="main-subhdr-logo" style="font-size: 20px; font-weight: 800; color: rgb(168, 85, 247); letter-spacing: -0.5px;">📺 MODO TV</div>
+    <div id="main-subhdr-logo" style="font-size: 20px; font-weight: 800; color: rgb(74, 143, 247); letter-spacing: -0.5px;">📊 COFEMA</div>
     <div style="width:1px;height:32px;background:var(--bord2);"></div>
     <div class="logo">Monitor<b>Preços</b></div>
   </div>
@@ -676,8 +677,8 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
 
 <div id="cards">
   <div class="card"><div class="card-lbl">Produtos</div><div class="card-val cv-blue" id="c1">126</div></div>
-  <div class="card"><div class="card-lbl">Garden + barato</div><div class="card-val cv-grn" id="c2">69</div></div>
-  <div class="card"><div class="card-lbl">Garden + caro</div><div class="card-val cv-red" id="c3">12</div></div>
+  <div class="card"><div class="card-lbl">Garden + barato</div><div class="card-val cv-grn" id="c2">70</div></div>
+  <div class="card"><div class="card-lbl">Garden + caro</div><div class="card-val cv-red" id="c3">11</div></div>
   <div class="card"><div class="card-lbl">Empate</div><div class="card-val" id="c4">0</div></div>
   <div class="card"><div class="card-lbl">Sem concorrente</div><div class="card-val cv-amb" id="c5">45</div></div>
 </div>
@@ -685,23 +686,23 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
 <div id="coleta-bar" style="display: flex;"><span style="color:var(--muted);font-size:11px">Última coleta:</span><span class="coleta-item">
       <span class="coleta-dot" style="background:#4a8ff7"></span>
       <span style="color:#4a8ff7">Garden</span>
-      <span>22/05/2026, 14:04</span>
+      <span>28/05/2026, 14:31</span>
     </span><span class="coleta-item">
       <span class="coleta-dot" style="background:#f05252"></span>
       <span style="color:#f05252">Metais Rei</span>
-      <span>22/05/2026, 13:59</span>
+      <span>28/05/2026, 14:26</span>
     </span><span class="coleta-item">
       <span class="coleta-dot" style="background:#f0a030"></span>
       <span style="color:#f0a030">FICO</span>
-      <span>22/05/2026, 14:05</span>
+      <span>28/05/2026, 14:32</span>
     </span><span class="coleta-item">
       <span class="coleta-dot" style="background:#a855f7"></span>
       <span style="color:#a855f7">RAPANUI</span>
-      <span>22/05/2026, 13:58</span>
+      <span>28/05/2026, 14:25</span>
     </span><span class="coleta-item">
       <span class="coleta-dot" style="background:#64b5f6"></span>
       <span style="color:#64b5f6">Diversos</span>
-      <span>22/05/2026, 14:03</span>
+      <span>28/05/2026, 14:30</span>
     </span></div>
 
 <!-- ── Controls (Dashboard normal) ── -->
@@ -930,12 +931,12 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
                   <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">293164</td>
                   <td class="td-prc-c">R$&nbsp;26,45</td>
                   <td class="td-dif"><span class="dif-badge dif-win">▼ 23.3%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="grp-row"><td colspan="17">TORNEIRAS DE BOIA</td></tr><tr class="prod-row"><td class="td-cod-g">10351ZPE</td>
-                 <td class="td-desc" title="TORN BOIA GARDEN  3/4ZAMAC LEVE">TORN BOIA GARDEN  3/4ZAMAC LEVE</td><td class="td-cod-s">403297</td>
+                 <td class="td-desc" title="BOIA CX D AGUA ZAMAC GARDEN 3/4 PQ">BOIA CX D AGUA ZAMAC GARDEN 3/4 PQ</td><td class="td-cod-s">403297</td>
                   <td class="td-prc">R$&nbsp;15,99</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">218588 <span style="color:var(--blue);font-size:10px">(ZB)</span></td>
                   <td class="td-prc-c">R$&nbsp;17,34</td>
                   <td class="td-dif"><span class="dif-badge dif-win">▼ 7.8%</span></td></tr><tr class="prod-row"><td class="td-cod-g">10351ZPRE</td>
-                 <td class="td-desc" title="TORN BOIA GARDEN  3/4ZAMAC REFORCADA">TORN BOIA GARDEN  3/4ZAMAC REFORCADA</td><td class="td-cod-s">308765</td>
+                 <td class="td-desc" title="BOIA CX D AGUA ZAMAC GARDEN 3/4 GD">BOIA CX D AGUA ZAMAC GARDEN 3/4 GD</td><td class="td-cod-s">308765</td>
                   <td class="td-prc">R$&nbsp;19,99</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">218596 <span style="color:var(--blue);font-size:10px">(ZB)</span></td>
                   <td class="td-prc-c">R$&nbsp;22,15</td>
@@ -946,17 +947,17 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
                  <td class="td-desc" title="TORN BOIA GARDEN  1/2 BOIA PVC">TORN BOIA GARDEN  1/2 BOIA PVC</td><td class="td-cod-s">149799</td>
                   <td class="td-prc">R$&nbsp;52,40</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">141780 <span style="color:var(--blue);font-size:10px">(DECA)</span></td>
-                  <td class="td-prc-c">R$&nbsp;104,40</td>
-                  <td class="td-dif"><span class="dif-badge dif-win">▼ 49.8%</span></td></tr><tr class="prod-row"><td class="td-cod-g">11351NLE</td>
+                  <td class="td-prc-c">R$&nbsp;122,60</td>
+                  <td class="td-dif"><span class="dif-badge dif-win">▼ 57.3%</span></td></tr><tr class="prod-row"><td class="td-cod-g">11351NLE</td>
                  <td class="td-desc" title="TORN BOIA GARDEN  3/4BOIA LATAO">TORN BOIA GARDEN  3/4BOIA LATAO</td><td class="td-cod-s">309915</td>
                   <td class="td-prc">R$&nbsp;96,10</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11351NPE</td>
-                 <td class="td-desc" title="TORN BOIA GARDEN  3/4BOIA PVC LEVE">TORN BOIA GARDEN  3/4BOIA PVC LEVE</td><td class="td-cod-s">149802</td>
+                 <td class="td-desc" title="BOIA CX D AGUA METAL GARDEN 3/4 PQ NPE">BOIA CX D AGUA METAL GARDEN 3/4 PQ NPE</td><td class="td-cod-s">149802</td>
                   <td class="td-prc">R$&nbsp;55,90</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">20435</td>
                   <td class="td-prc-c">R$&nbsp;27,00</td>
                   <td class="td-dif"><span class="dif-badge dif-loss">▲ 107.0%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11351RRE</td>
-                 <td class="td-desc" title="TORN BOIA GARDEN  3/4BOIA PVC REF">TORN BOIA GARDEN  3/4BOIA PVC REF</td><td class="td-cod-s">149810</td>
+                 <td class="td-desc" title="BOIA CX D AGUA METAL GARDEN 3/4 GD">BOIA CX D AGUA METAL GARDEN 3/4 GD</td><td class="td-cod-s">149810</td>
                   <td class="td-prc">R$&nbsp;103,50</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">20443</td>
                   <td class="td-prc-c">R$&nbsp;54,80</td>
@@ -971,16 +972,16 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
                  <td class="td-desc" title="TORN BOIA GARDEN 1.1/4 BOIA PVC">TORN BOIA GARDEN 1.1/4 BOIA PVC</td><td class="td-cod-s">148741</td>
                   <td class="td-prc">R$&nbsp;240,60</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">415053 <span style="color:var(--blue);font-size:10px">(DECA)</span></td>
-                  <td class="td-prc-c">R$&nbsp;378,00</td>
-                  <td class="td-dif"><span class="dif-badge dif-win">▼ 36.3%</span></td></tr><tr class="prod-row"><td class="td-cod-g">11354PG</td>
-                 <td class="td-desc" title="TORN BOIA GARDEN 1.1/2 BOIA PVC">TORN BOIA GARDEN 1.1/2 BOIA PVC</td><td class="td-cod-s">148750</td>
+                  <td class="td-prc-c">R$&nbsp;438,00</td>
+                  <td class="td-dif"><span class="dif-badge dif-win">▼ 45.1%</span></td></tr><tr class="prod-row"><td class="td-cod-g">11354PG</td>
+                 <td class="td-desc" title="BOIA CX D AGUA LATAO GARDEN 1.1/2">BOIA CX D AGUA LATAO GARDEN 1.1/2</td><td class="td-cod-s">148750</td>
                   <td class="td-prc">R$&nbsp;240,60</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11355PG</td>
                  <td class="td-desc" title="TORN BOIA GARDEN 2 BOIA PVC">TORN BOIA GARDEN 2 BOIA PVC</td><td class="td-cod-s">148768</td>
                   <td class="td-prc">R$&nbsp;401,00</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">415053 <span style="color:var(--blue);font-size:10px">(DECA)</span></td>
-                  <td class="td-prc-c">R$&nbsp;378,00</td>
-                  <td class="td-dif"><span class="dif-badge dif-loss">▲ 6.1%</span></td></tr><tr class="prod-row"><td class="td-cod-g">11361PE</td>
+                  <td class="td-prc-c">R$&nbsp;438,00</td>
+                  <td class="td-dif"><span class="dif-badge dif-win">▼ 8.4%</span></td></tr><tr class="prod-row"><td class="td-cod-g">11361PE</td>
                  <td class="td-desc" title="TORN BOIA GARDEN VAZ.TOTAL BOIA PVC 3/4">TORN BOIA GARDEN VAZ.TOTAL BOIA PVC 3/4</td><td class="td-cod-s">145718</td>
                   <td class="td-prc">R$&nbsp;158,90</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">410687 <span style="color:var(--blue);font-size:10px">(IMPERATRIZ)</span></td>
@@ -991,7 +992,7 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">410699 <span style="color:var(--blue);font-size:10px">(IMPERATRIZ)</span></td>
                   <td class="td-prc-c">R$&nbsp;114,20</td>
                   <td class="td-dif"><span class="dif-badge dif-loss">▲ 45.3%</span></td></tr><tr class="prod-row"><td class="td-cod-g">12361PE</td>
-                 <td class="td-desc" title="TORN BOIA GARDEN VAZ.TOTAL PVC 3/4">TORN BOIA GARDEN VAZ.TOTAL PVC 3/4</td><td class="td-cod-s">364312</td>
+                 <td class="td-desc" title="BOIA CX D AGUA 3/4 GARDEN VAZAO TOTAL PE">BOIA CX D AGUA 3/4 GARDEN VAZAO TOTAL PE</td><td class="td-cod-s">364312</td>
                   <td class="td-prc">R$&nbsp;57,20</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">12362PE</td>
                  <td class="td-desc" title="TORN BOIA GARDEN VAZ.TOTAL PVC1">TORN BOIA GARDEN VAZ.TOTAL PVC1</td><td class="td-cod-s">364320</td>
@@ -1044,7 +1045,7 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">290009</td>
                   <td class="td-prc-c">R$&nbsp;10,14</td>
                   <td class="td-dif"><span class="dif-badge dif-win">▼ 21.1%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="grp-row"><td colspan="17">NIPLES</td></tr><tr class="prod-row"><td class="td-cod-g">10603E</td>
-                 <td class="td-desc" title="NIPLE ZAMAC AMARELO GARDEN (A) 1/2X1/2">NIPLE ZAMAC AMARELO GARDEN (A) 1/2X1/2</td><td class="td-cod-s">408910</td>
+                 <td class="td-desc" title="NIPLE GARDEN RR 1/2 X 1/2 ZAMAC">NIPLE GARDEN RR 1/2 X 1/2 ZAMAC</td><td class="td-cod-s">408910</td>
                   <td class="td-prc">R$&nbsp;5,82</td>
                   <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">138266</td>
                   <td class="td-prc-c">R$&nbsp;8,92</td>
@@ -1053,7 +1054,7 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
                   <td class="td-dif"><span class="dif-badge dif-win">▼ 75.3%</span></td><td class="td-cod-s" style="border-left:2px solid #2e3555">405110 <span style="color:var(--blue);font-size:10px">(RAMO)</span></td>
                   <td class="td-prc-c">R$&nbsp;6,70</td>
                   <td class="td-dif"><span class="dif-badge dif-win">▼ 13.1%</span></td></tr><tr class="prod-row"><td class="td-cod-g">10604E</td>
-                 <td class="td-desc" title="NIPLE ZAMAC AMARELO GARDEN (C) 3/4X3/4">NIPLE ZAMAC AMARELO GARDEN (C) 3/4X3/4</td><td class="td-cod-s">408912</td>
+                 <td class="td-desc" title="NIPLE GARDEN RR 3/4 X 3/4 ZAMAC">NIPLE GARDEN RR 3/4 X 3/4 ZAMAC</td><td class="td-cod-s">408912</td>
                   <td class="td-prc">R$&nbsp;9,26</td>
                   <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">138282</td>
                   <td class="td-prc-c">R$&nbsp;12,16</td>
@@ -1089,13 +1090,13 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
                   <td class="td-prc">R$&nbsp;8,28</td>
                   <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">406099</td>
                   <td class="td-prc-c">R$&nbsp;9,53</td>
-                  <td class="td-dif"><span class="dif-badge dif-win">▼ 13.1%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="grp-row"><td colspan="17">JUNÇÕES</td></tr><tr class="prod-row"><td class="td-cod-g">10840E</td>
-                 <td class="td-desc" title="JUNCAO METAL GARDEN P/MAQ.LAVAR">JUNCAO METAL GARDEN P/MAQ.LAVAR</td><td class="td-cod-s">411072</td>
+                  <td class="td-dif"><span class="dif-badge dif-win">▼ 13.1%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="grp-row"><td colspan="17">JUNÇÃO / CONEXOES</td></tr><tr class="prod-row"><td class="td-cod-g">10840E</td>
+                 <td class="td-desc" title="ADAP P/TANQUE MAQ LAVAR T 1/2 GARDEN">ADAP P/TANQUE MAQ LAVAR T 1/2 GARDEN</td><td class="td-cod-s">411072</td>
                   <td class="td-prc">R$&nbsp;16,49</td>
                   <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">293083</td>
                   <td class="td-prc-c">R$&nbsp;23,50</td>
                   <td class="td-dif"><span class="dif-badge dif-win">▼ 29.8%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">10870E</td>
-                 <td class="td-desc" title="JUNCAO METAL GARDEN Y P/FILTRO 1/2">JUNCAO METAL GARDEN Y P/FILTRO 1/2</td><td class="td-cod-s">403294</td>
+                 <td class="td-desc" title="JUNCAO METAL 1/2 ZAMAC GARDEN">JUNCAO METAL 1/2 ZAMAC GARDEN</td><td class="td-cod-s">403294</td>
                   <td class="td-prc">R$&nbsp;14,94</td>
                   <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">47627</td>
                   <td class="td-prc-c">R$&nbsp;22,10</td>
@@ -1120,32 +1121,32 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
                   <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23957</td>
                   <td class="td-prc-c">R$&nbsp;11,44</td>
                   <td class="td-dif"><span class="dif-badge dif-win">▼ 40.0%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="grp-row"><td colspan="17">AUMENTO AMARELO</td></tr><tr class="prod-row"><td class="td-cod-g">10857E</td>
-                 <td class="td-desc" title="AUMENTO TORN.GARDEN ZAM.AM.1/2(A)CT">AUMENTO TORN.GARDEN ZAM.AM.1/2(A)CT</td><td class="td-cod-s">364150</td>
+                 <td class="td-desc" title="AUMENTO P/TORN.GARDEN 1/2 CTO 10857 ZAM.">AUMENTO P/TORN.GARDEN 1/2 CTO 10857 ZAM.</td><td class="td-cod-s">364150</td>
                   <td class="td-prc">R$&nbsp;4,22</td>
                   <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23876</td>
                   <td class="td-prc-c">R$&nbsp;6,84</td>
                   <td class="td-dif"><span class="dif-badge dif-win">▼ 38.3%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">10858E</td>
-                 <td class="td-desc" title="AUMENTO TORN.GARDEN ZAM.AM.1/2(B)MD">AUMENTO TORN.GARDEN ZAM.AM.1/2(B)MD</td><td class="td-cod-s">364169</td>
+                 <td class="td-desc" title="AUMENTO P/TORN.GARDEN 1/2 MED 10858 ZAM.">AUMENTO P/TORN.GARDEN 1/2 MED 10858 ZAM.</td><td class="td-cod-s">364169</td>
                   <td class="td-prc">R$&nbsp;4,97</td>
                   <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23892</td>
                   <td class="td-prc-c">R$&nbsp;8,52</td>
                   <td class="td-dif"><span class="dif-badge dif-win">▼ 41.7%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">10859E</td>
-                 <td class="td-desc" title="AUMENTO TORN.GARDEN ZAM.AM.1/2(C)LG">AUMENTO TORN.GARDEN ZAM.AM.1/2(C)LG</td><td class="td-cod-s">364177</td>
+                 <td class="td-desc" title="AUMENTO P/TORN.GARDEN 1/2 LGO 10859 ZAM.">AUMENTO P/TORN.GARDEN 1/2 LGO 10859 ZAM.</td><td class="td-cod-s">364177</td>
                   <td class="td-prc">R$&nbsp;6,48</td>
                   <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23906</td>
                   <td class="td-prc-c">R$&nbsp;10,64</td>
                   <td class="td-dif"><span class="dif-badge dif-win">▼ 39.1%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">10860E</td>
-                 <td class="td-desc" title="AUMENTO TORN.GARDEN ZAM.AM.3/4(A)CT">AUMENTO TORN.GARDEN ZAM.AM.3/4(A)CT</td><td class="td-cod-s">364185</td>
+                 <td class="td-desc" title="AUMENTO P/TORN.GARDEN 3/4 CTO 10860 ZAM.">AUMENTO P/TORN.GARDEN 3/4 CTO 10860 ZAM.</td><td class="td-cod-s">364185</td>
                   <td class="td-prc">R$&nbsp;4,99</td>
                   <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23914</td>
                   <td class="td-prc-c">R$&nbsp;10,42</td>
                   <td class="td-dif"><span class="dif-badge dif-win">▼ 52.1%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">10861E</td>
-                 <td class="td-desc" title="AUMENTO TORN.GARDEN ZAM.AM.3/4(B)MD">AUMENTO TORN.GARDEN ZAM.AM.3/4(B)MD</td><td class="td-cod-s">364193</td>
+                 <td class="td-desc" title="AUMENTO P/TORN.GARDEN 3/4 MED 10861 ZAM.">AUMENTO P/TORN.GARDEN 3/4 MED 10861 ZAM.</td><td class="td-cod-s">364193</td>
                   <td class="td-prc">R$&nbsp;5,42</td>
                   <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23922</td>
                   <td class="td-prc-c">R$&nbsp;11,88</td>
                   <td class="td-dif"><span class="dif-badge dif-win">▼ 54.4%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">10862E</td>
-                 <td class="td-desc" title="AUMENTO TORN.GARDEN ZAM.AM.3/4(C)LG">AUMENTO TORN.GARDEN ZAM.AM.3/4(C)LG</td><td class="td-cod-s">364207</td>
+                 <td class="td-desc" title="AUMENTO P/TORN.GARDEN 3/4 LGO 10862 ZAM.">AUMENTO P/TORN.GARDEN 3/4 LGO 10862 ZAM.</td><td class="td-cod-s">364207</td>
                   <td class="td-prc">R$&nbsp;7,90</td>
                   <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23930</td>
                   <td class="td-prc-c">R$&nbsp;16,47</td>
@@ -1189,18 +1190,18 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
                   <td class="td-prc">R$&nbsp;12,12</td>
                   <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">406083</td>
                   <td class="td-prc-c">R$&nbsp;17,45</td>
-                  <td class="td-dif"><span class="dif-badge dif-win">▼ 30.5%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="grp-row"><td colspan="17">PISTOLA AR</td></tr><tr class="prod-row"><td class="td-cod-g">11003E</td>
-                 <td class="td-desc" title="BICO DE AR GARDEN P/LIMP.R1/411003">BICO DE AR GARDEN P/LIMP.R1/411003</td><td class="td-cod-s">94730</td>
+                  <td class="td-dif"><span class="dif-badge dif-win">▼ 30.5%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="grp-row"><td colspan="17">PISTOLAS AR</td></tr><tr class="prod-row"><td class="td-cod-g">11003E</td>
+                 <td class="td-desc" title="BICO DE AR GARDEN P/LIMPEZA">BICO DE AR GARDEN P/LIMPEZA</td><td class="td-cod-s">94730</td>
                   <td class="td-prc">R$&nbsp;25,85</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">140457 <span style="color:var(--blue);font-size:10px">(ARPREX)</span></td>
                   <td class="td-prc-c">R$&nbsp;29,99</td>
                   <td class="td-dif"><span class="dif-badge dif-win">▼ 13.8%</span></td></tr><tr class="prod-row"><td class="td-cod-g">11006E</td>
-                 <td class="td-desc" title="BICO DE AR GARDEN P/PULV.R1/411006">BICO DE AR GARDEN P/PULV.R1/411006</td><td class="td-cod-s">94749</td>
+                 <td class="td-desc" title="BICO DE AR GARDEN P/PULVERIZACAO">BICO DE AR GARDEN P/PULVERIZACAO</td><td class="td-cod-s">94749</td>
                   <td class="td-prc">R$&nbsp;31,25</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">140465 <span style="color:var(--blue);font-size:10px">(ARPREX)</span></td>
                   <td class="td-prc-c">R$&nbsp;44,80</td>
-                  <td class="td-dif"><span class="dif-badge dif-win">▼ 30.2%</span></td></tr><tr class="grp-row"><td colspan="17">ENGATES AGUA</td></tr><tr class="prod-row"><td class="td-cod-g">11303E</td>
-                 <td class="td-desc" title="ENGATE RAPIDO GARDEN AGUA 3/4x1/2">ENGATE RAPIDO GARDEN AGUA 3/4x1/2</td><td class="td-cod-s">94757</td>
+                  <td class="td-dif"><span class="dif-badge dif-win">▼ 30.2%</span></td></tr><tr class="grp-row"><td colspan="17">ENGATE AGUA</td></tr><tr class="prod-row"><td class="td-cod-g">11303E</td>
+                 <td class="td-desc" title="ENGATE RAP.P/MANG.3/4X1/2 GARDEN">ENGATE RAP.P/MANG.3/4X1/2 GARDEN</td><td class="td-cod-s">94757</td>
                   <td class="td-prc">R$&nbsp;52,90</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="grp-row"><td colspan="17">EMENDAS MANG</td></tr><tr class="prod-row"><td class="td-cod-g">11500E</td>
                  <td class="td-desc" title="EMENDA MANGLATAOGARDEN RAP 1/2">EMENDA MANGLATAOGARDEN RAP 1/2</td><td class="td-cod-s">171123</td>
@@ -1215,18 +1216,18 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
                  <td class="td-desc" title="EMENDA P/AR RETA GARDEN(C)3/811721">EMENDA P/AR RETA GARDEN(C)3/811721</td><td class="td-cod-s">183121</td>
                   <td class="td-prc">R$&nbsp;9,52</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11824G</td>
-                 <td class="td-desc" title="EMENDA MANGZAMACGARDEN 1/2">EMENDA MANGZAMACGARDEN 1/2</td><td class="td-cod-s">140244</td>
+                 <td class="td-desc" title="EMENDA P/MANGUEIRA 1/2 GARDEN 11824G">EMENDA P/MANGUEIRA 1/2 GARDEN 11824G</td><td class="td-cod-s">140244</td>
                   <td class="td-prc">R$&nbsp;3,14</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11825G</td>
-                 <td class="td-desc" title="EMENDA MANGZAMACGARDEN 3/4">EMENDA MANGZAMACGARDEN 3/4</td><td class="td-cod-s">140252</td>
+                 <td class="td-desc" title="EMENDA P/MANGUEIRA 3/4 GARDEN">EMENDA P/MANGUEIRA 3/4 GARDEN</td><td class="td-cod-s">140252</td>
                   <td class="td-prc">R$&nbsp;5,20</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="grp-row"><td colspan="17">ESGUICHOS</td></tr><tr class="prod-row"><td class="td-cod-g">11701PRG</td>
-                 <td class="td-desc" title="ESGUICHO REV.GARDEN 1/2PRATA 11701">ESGUICHO REV.GARDEN 1/2PRATA 11701</td><td class="td-cod-s">265489</td>
+                 <td class="td-desc" title="ESGUICHO REVOLVER GARDEN PINTADO 1/2">ESGUICHO REVOLVER GARDEN PINTADO 1/2</td><td class="td-cod-s">265489</td>
                   <td class="td-prc">R$&nbsp;32,60</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">265420</td>
                   <td class="td-prc-c">R$&nbsp;24,70</td>
                   <td class="td-dif"><span class="dif-badge dif-loss">▲ 32.0%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11701TG</td>
-                 <td class="td-desc" title="ESGUICHO REV.GARDEN 1/2TRAD. 1170">ESGUICHO REV.GARDEN 1/2TRAD. 1170</td><td class="td-cod-s">403295</td>
+                 <td class="td-desc" title="ESGUICHO REVOLVER GARDEN 1/2 11701">ESGUICHO REVOLVER GARDEN 1/2 11701</td><td class="td-cod-s">403295</td>
                   <td class="td-prc">R$&nbsp;25,90</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">346098</td>
                   <td class="td-prc-c">R$&nbsp;24,40</td>
@@ -1234,13 +1235,13 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
                  <td class="td-desc" title="ESGUICHO REV.GARDEN 1/2TRAD.C/PINO ENG">ESGUICHO REV.GARDEN 1/2TRAD.C/PINO ENG</td><td class="td-cod-s">411089</td>
                   <td class="td-prc">R$&nbsp;26,90</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11740E</td>
-                 <td class="td-desc" title="ESGUICHO PADRAO GARDEN METAL TIPO MAXI">ESGUICHO PADRAO GARDEN METAL TIPO MAXI</td><td class="td-cod-s">122637</td>
+                 <td class="td-desc" title="ESGUICHO MAXI GARDEN 1/2 1174">ESGUICHO MAXI GARDEN 1/2 1174</td><td class="td-cod-s">122637</td>
                   <td class="td-prc">R$&nbsp;46,10</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11750ZG</td>
-                 <td class="td-desc" title="ESGUICHO REV.GARDEN MINIZINC.1175">ESGUICHO REV.GARDEN MINIZINC.1175</td><td class="td-cod-s">233021</td>
+                 <td class="td-desc" title="ESGUICHO REVOLVER GARDEN MINI ZINC">ESGUICHO REVOLVER GARDEN MINI ZINC</td><td class="td-cod-s">233021</td>
                   <td class="td-prc">R$&nbsp;14,77</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11901E</td>
-                 <td class="td-desc" title="ESGUICHO PRESSAO JET GARDEN LONGO 1/2">ESGUICHO PRESSAO JET GARDEN LONGO 1/2</td><td class="td-cod-s">255823</td>
+                 <td class="td-desc" title="ESGUICHO JET GARDEN 2 VERSOES DE JATOS">ESGUICHO JET GARDEN 2 VERSOES DE JATOS</td><td class="td-cod-s">255823</td>
                   <td class="td-prc">R$&nbsp;49,05</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">383112 <span style="color:var(--blue);font-size:10px">(TRAMONTINA)</span></td>
                   <td class="td-prc-c">R$&nbsp;74,20</td>
@@ -1253,63 +1254,63 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
                  <td class="td-desc" title="ESGUICHO REV.GARDEN 3/4PLAST. 1270">ESGUICHO REV.GARDEN 3/4PLAST. 1270</td><td class="td-cod-s">411090</td>
                   <td class="td-prc">R$&nbsp;9,34</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">12705G</td>
-                 <td class="td-desc" title="ESGUICHO REV.GARDEN 3/4PLAST.C/PINO ENG">ESGUICHO REV.GARDEN 3/4PLAST.C/PINO ENG</td><td class="td-cod-s">411091</td>
+                 <td class="td-desc" title="ESGUICHO REVOLVER GARDEN PLASTICO 1/2">ESGUICHO REVOLVER GARDEN PLASTICO 1/2</td><td class="td-cod-s">411091</td>
                   <td class="td-prc">R$&nbsp;9,34</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">314463 <span style="color:var(--blue);font-size:10px">(MAGICK)</span></td>
                   <td class="td-prc-c">R$&nbsp;7,38</td>
-                  <td class="td-dif"><span class="dif-badge dif-loss">▲ 26.6%</span></td></tr><tr class="grp-row"><td colspan="17">BICOS DE TORNEIRA</td></tr><tr class="prod-row"><td class="td-cod-g">11832G</td>
-                 <td class="td-desc" title="UNIAO ZAMAC GARDEN 1/2x1/2 P/TORN.">UNIAO ZAMAC GARDEN 1/2x1/2 P/TORN.</td><td class="td-cod-s">130192</td>
-                  <td class="td-prc">R$&nbsp;2,58</td>
-                  <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">69574</td>
-                  <td class="td-prc-c">R$&nbsp;2,37</td>
-                  <td class="td-dif"><span class="dif-badge dif-loss">▲ 8.9%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11833G</td>
-                 <td class="td-desc" title="UNIAO ZAMAC GARDEN 3/4x1/2 P/TORN.">UNIAO ZAMAC GARDEN 3/4x1/2 P/TORN.</td><td class="td-cod-s">94765</td>
-                  <td class="td-prc">R$&nbsp;2,69</td>
-                  <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">6602</td>
-                  <td class="td-prc-c">R$&nbsp;2,85</td>
-                  <td class="td-dif"><span class="dif-badge dif-win">▼ 5.6%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11834G</td>
-                 <td class="td-desc" title="UNIAO ZAMAC GARDEN 3/4x3/4 P/TORN.">UNIAO ZAMAC GARDEN 3/4x3/4 P/TORN.</td><td class="td-cod-s">183350</td>
-                  <td class="td-prc">R$&nbsp;3,24</td>
-                  <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">69582</td>
-                  <td class="td-prc-c">R$&nbsp;3,05</td>
-                  <td class="td-dif"><span class="dif-badge dif-loss">▲ 6.2%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="grp-row"><td colspan="17">EXTENSOES CROMADAS</td></tr><tr class="prod-row"><td class="td-cod-g">11850E</td>
-                 <td class="td-desc" title="EXTENSAO TORN.GARDEN ZAM.CR1/2(A)CT">EXTENSAO TORN.GARDEN ZAM.CR1/2(A)CT</td><td class="td-cod-s">364258</td>
-                  <td class="td-prc">R$&nbsp;7,12</td>
-                  <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23817</td>
-                  <td class="td-prc-c">R$&nbsp;9,72</td>
-                  <td class="td-dif"><span class="dif-badge dif-win">▼ 26.7%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11851E</td>
-                 <td class="td-desc" title="EXTENSAO TORN.GARDEN ZAM.CR1/2(B)MD">EXTENSAO TORN.GARDEN ZAM.CR1/2(B)MD</td><td class="td-cod-s">364266</td>
-                  <td class="td-prc">R$&nbsp;8,44</td>
-                  <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23825</td>
-                  <td class="td-prc-c">R$&nbsp;13,34</td>
-                  <td class="td-dif"><span class="dif-badge dif-win">▼ 36.7%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11852E</td>
-                 <td class="td-desc" title="EXTENSAO TORN.GARDEN ZAM.CR1/2(C)LG">EXTENSAO TORN.GARDEN ZAM.CR1/2(C)LG</td><td class="td-cod-s">364274</td>
-                  <td class="td-prc">R$&nbsp;10,06</td>
-                  <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23833</td>
-                  <td class="td-prc-c">R$&nbsp;16,09</td>
-                  <td class="td-dif"><span class="dif-badge dif-win">▼ 37.5%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11853E</td>
-                 <td class="td-desc" title="EXTENSAO TORN.GARDEN ZAM.CR3/4(A)CT">EXTENSAO TORN.GARDEN ZAM.CR3/4(A)CT</td><td class="td-cod-s">364282</td>
-                  <td class="td-prc">R$&nbsp;8,75</td>
-                  <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23841</td>
-                  <td class="td-prc-c">R$&nbsp;15,82</td>
-                  <td class="td-dif"><span class="dif-badge dif-win">▼ 44.7%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11854E</td>
-                 <td class="td-desc" title="EXTENSAO TORN.GARDEN ZAM.CR3/4(B)MD">EXTENSAO TORN.GARDEN ZAM.CR3/4(B)MD</td><td class="td-cod-s">364290</td>
-                  <td class="td-prc">R$&nbsp;10,44</td>
-                  <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23850</td>
-                  <td class="td-prc-c">R$&nbsp;16,82</td>
-                  <td class="td-dif"><span class="dif-badge dif-win">▼ 37.9%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11855E</td>
-                 <td class="td-desc" title="EXTENSAO TORN.GARDEN ZAM.CR3/4(C)LG">EXTENSAO TORN.GARDEN ZAM.CR3/4(C)LG</td><td class="td-cod-s">364304</td>
-                  <td class="td-prc">R$&nbsp;12,56</td>
-                  <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23868</td>
-                  <td class="td-prc-c">R$&nbsp;19,72</td>
-                  <td class="td-dif"><span class="dif-badge dif-win">▼ 36.3%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="grp-row"><td colspan="17">IRRIGADORES</td></tr><tr class="prod-row"><td class="td-cod-g">13705E</td>
-                 <td class="td-desc" title="IRRIGADOR GARDEN GIR.1/22HASTES AL.SUP.">IRRIGADOR GARDEN GIR.1/22HASTES AL.SUP.</td><td class="td-cod-s">404556</td>
+                  <td class="td-dif"><span class="dif-badge dif-loss">▲ 26.6%</span></td></tr><tr class="prod-row"><td class="td-cod-g">13705E</td>
+                 <td class="td-desc" title="IRRIGADOR GARDEN 2 HASTES GIRATORIO 1/2">IRRIGADOR GARDEN 2 HASTES GIRATORIO 1/2</td><td class="td-cod-s">404556</td>
                   <td class="td-prc">R$&nbsp;27,30</td>
                   <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">48186</td>
                   <td class="td-prc-c">R$&nbsp;28,50</td>
                   <td class="td-dif"><span class="dif-badge dif-win">▼ 4.2%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">234532 <span style="color:var(--blue);font-size:10px">(MACLOREN)</span></td>
                   <td class="td-prc-c">R$&nbsp;28,30</td>
-                  <td class="td-dif"><span class="dif-badge dif-win">▼ 3.5%</span></td></tr></tbody>
+                  <td class="td-dif"><span class="dif-badge dif-win">▼ 3.5%</span></td></tr><tr class="grp-row"><td colspan="17">BICOS DE TORNEIRA</td></tr><tr class="prod-row"><td class="td-cod-g">11832G</td>
+                 <td class="td-desc" title="UNIAO ZAMAC GARDEN 1/2x1/2 P/TORN.">UNIAO ZAMAC GARDEN 1/2x1/2 P/TORN.</td><td class="td-cod-s">130192</td>
+                  <td class="td-prc">R$&nbsp;2,58</td>
+                  <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">69574</td>
+                  <td class="td-prc-c">R$&nbsp;2,37</td>
+                  <td class="td-dif"><span class="dif-badge dif-loss">▲ 8.9%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11834G</td>
+                 <td class="td-desc" title="UNIAO ZAMAC GARDEN 3/4x3/4 P/TORN.">UNIAO ZAMAC GARDEN 3/4x3/4 P/TORN.</td><td class="td-cod-s">183350</td>
+                  <td class="td-prc">R$&nbsp;3,24</td>
+                  <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">69582</td>
+                  <td class="td-prc-c">R$&nbsp;3,05</td>
+                  <td class="td-dif"><span class="dif-badge dif-loss">▲ 6.2%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="grp-row"><td colspan="17">BICO PARA TORNEIRA</td></tr><tr class="prod-row"><td class="td-cod-g">11833G</td>
+                 <td class="td-desc" title="UNIAO P/TORN ZAMAC 3/4X1/2 GARDEN">UNIAO P/TORN ZAMAC 3/4X1/2 GARDEN</td><td class="td-cod-s">94765</td>
+                  <td class="td-prc">R$&nbsp;2,69</td>
+                  <td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">6602</td>
+                  <td class="td-prc-c">R$&nbsp;2,85</td>
+                  <td class="td-dif"><span class="dif-badge dif-win">▼ 5.6%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="grp-row"><td colspan="17">EXTENSAO TORNEIRA</td></tr><tr class="prod-row"><td class="td-cod-g">11850E</td>
+                 <td class="td-desc" title="EXTEN P/TORN.GARDEN 1/2 CURTA 1850 ZAMAC">EXTEN P/TORN.GARDEN 1/2 CURTA 1850 ZAMAC</td><td class="td-cod-s">364258</td>
+                  <td class="td-prc">R$&nbsp;7,12</td>
+                  <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23817</td>
+                  <td class="td-prc-c">R$&nbsp;9,72</td>
+                  <td class="td-dif"><span class="dif-badge dif-win">▼ 26.7%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11851E</td>
+                 <td class="td-desc" title="EXTEN P/TORN.GARDEN 1/2 MEDIA 1851 ZAMAC">EXTEN P/TORN.GARDEN 1/2 MEDIA 1851 ZAMAC</td><td class="td-cod-s">364266</td>
+                  <td class="td-prc">R$&nbsp;8,44</td>
+                  <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23825</td>
+                  <td class="td-prc-c">R$&nbsp;13,34</td>
+                  <td class="td-dif"><span class="dif-badge dif-win">▼ 36.7%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11852E</td>
+                 <td class="td-desc" title="EXTEN P/TORN.GARDEN 1/2 LONGA 1852 ZAMAC">EXTEN P/TORN.GARDEN 1/2 LONGA 1852 ZAMAC</td><td class="td-cod-s">364274</td>
+                  <td class="td-prc">R$&nbsp;10,06</td>
+                  <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23833</td>
+                  <td class="td-prc-c">R$&nbsp;16,09</td>
+                  <td class="td-dif"><span class="dif-badge dif-win">▼ 37.5%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11853E</td>
+                 <td class="td-desc" title="EXTEN P/TORN.GARDEN 3/4 CURTA 1853 ZAMAC">EXTEN P/TORN.GARDEN 3/4 CURTA 1853 ZAMAC</td><td class="td-cod-s">364282</td>
+                  <td class="td-prc">R$&nbsp;8,75</td>
+                  <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23841</td>
+                  <td class="td-prc-c">R$&nbsp;15,82</td>
+                  <td class="td-dif"><span class="dif-badge dif-win">▼ 44.7%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11854E</td>
+                 <td class="td-desc" title="EXTEN P/TORN.GARDEN 3/4 MEDIA 1854 ZAMAC">EXTEN P/TORN.GARDEN 3/4 MEDIA 1854 ZAMAC</td><td class="td-cod-s">364290</td>
+                  <td class="td-prc">R$&nbsp;10,44</td>
+                  <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23850</td>
+                  <td class="td-prc-c">R$&nbsp;16,82</td>
+                  <td class="td-dif"><span class="dif-badge dif-win">▼ 37.9%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr><tr class="prod-row"><td class="td-cod-g">11855E</td>
+                 <td class="td-desc" title="EXTEN P/TORN.GARDEN 3/4 LONGA 1855 ZAMAC">EXTEN P/TORN.GARDEN 3/4 LONGA 1855 ZAMAC</td><td class="td-cod-s">364304</td>
+                  <td class="td-prc">R$&nbsp;12,56</td>
+                  <td class="td-nil">—</td><td class="td-cod-s" style="border-left:2px solid #2e3555">23868</td>
+                  <td class="td-prc-c">R$&nbsp;19,72</td>
+                  <td class="td-dif"><span class="dif-badge dif-win">▼ 36.3%</span></td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td><td class="td-nil" style="border-left:2px solid #2e3555">—</td><td class="td-nil">—</td><td class="td-nil">—</td></tr></tbody>
   </table>
 </div>
 
@@ -3030,6 +3031,9 @@ body.tv-mode #tv-view { padding-bottom: 50px; }
   </div>
 </div>
 
+<!-- ── Aba Configurações ── -->
+<div id="cfg-section" style="display:none"></div>
+
 <script>
 // ══════════════════════════════════════════════════════════════
 // ── CDL ──────────────────────────────────────────────────────────
@@ -3117,6 +3121,7 @@ function setMode(modo) {
   document.getElementById('tab-construja').classList.toggle('on', modo === 'construja')
   document.getElementById('tab-fera').classList.toggle('on', modo === 'fera')
   document.getElementById('tab-tv').classList.toggle('on', modo === 'tv' || modo === 'tv-eltr')
+  document.getElementById('tab-config').classList.toggle('on', modo === 'config')
   // Sub-header único — logo e nome variam por aba
   const subLogo = document.getElementById('main-subhdr-logo')
   if (subLogo) {
@@ -3128,6 +3133,7 @@ function setMode(modo) {
       construja: { txt: '🏗️ CONSTRUJÁ',      cor: '#f07d2b' },
       fera:      { txt: '🦁 FERA ATACADO',   cor: '#cc0000' },
       tv:        { txt: '📺 MODO TV',         cor: '#a855f7' },
+      config:    { txt: '⚙️ CONFIGURAÇÕES',    cor: '#6b7299' },
     }
     const l = logos[modo] || logos.normal
     subLogo.textContent = l.txt
@@ -3172,6 +3178,10 @@ function setMode(modo) {
   if (modo === 'cdl')      { document.body.classList.add('cdl-mode');      if(dadosCdl.length===0) carregarCdl(); else renderCdl() }
   if (modo === 'construja'){ document.body.classList.add('construja-mode'); if(dadosConstruja.length===0) carregarConstruja(); else renderConstruja() }
   if (modo === 'fera')     { document.body.classList.add('fera-mode');      if(dadosFera.length===0) carregarFera(); else renderFera() }
+  // Mostrar/esconder seção config
+  const cfgSec = document.getElementById('cfg-section')
+  if (cfgSec) cfgSec.style.display = modo === 'config' ? 'block' : 'none'
+  if (modo === 'config') cfgRenderSecao()
 }
 
 // ── Carregar dados ─────────────────────────────────────────────
@@ -4376,9 +4386,365 @@ function renderConstruja() {
 // ── Auto-refresh a cada 5 min ──────────────────────────────────
 setInterval(() => carregar(), 5 * 60 * 1000)
 
+// ══════════════════════════════════════════════════════════════
+// ABA CONFIGURAÇÕES
+// ══════════════════════════════════════════════════════════════
+
+const SERVER_URL = 'http://localhost:5000'
+
+const CFG_CLIENTES = [
+  { id: 'cofema',        nome: 'Cofema',          icone: '📊', cor: '#4a8ff7', tabela: 'produtos_monitorados',
+    colunas: ['cod_garden','descricao','grupo','cod_garden_site','cod_metaisrei','cod_fico','cod_rapanui','cod_diversos','obs_diversos'] },
+  { id: 'eletroleste',   nome: 'Eletroleste',      icone: '⚡', cor: '#e03030', tabela: 'produtos_mon_eltr',
+    colunas: ['cod_garden','desc_garden','grupo','cod_garden_eltr','cod_metaisrei_eltr','cod_sea_eltr','cod_zb_eltr','cod_diversos_eltr','obs_diversos_eltr'] },
+  { id: 'fera',          nome: 'Fera Atacado',     icone: '🦁', cor: '#cc0000', tabela: 'produtos_mon_fera',
+    colunas: ['cod_garden','descricao','grupo','cod_fera_garden','cod_diversos','obs_diversos'] },
+  { id: 'casadolojista', nome: 'Casa do Lojista',  icone: '🏬', cor: '#2db843', tabela: 'produtos_mon_cdl',
+    colunas: ['cod_garden','desc_garden','grupo','cod_garden_cdl','cod_metaisrei_cdl','cod_diversos_cdl','obs_diversos_cdl'] },
+  { id: 'construja',     nome: 'ConstruJá',        icone: '🏗️', cor: '#f07d2b', tabela: 'produtos_mon_construja',
+    colunas: ['cod_garden','descricao','grupo','cod_construja','cod_sea','cod_diversos','obs_diversos'] },
+]
+
+let cfgClienteAtual = 'cofema'
+let cfgProdutos = []
+let cfgFiltro = ''
+let cfgServidorOnline = false
+let cfgColetando = null
+let cfgLogInterval = null
+
+// ── Status do servidor ─────────────────────────────────────────
+async function cfgCheckServidor() {
+  try {
+    const r = await fetch(`${SERVER_URL}/api/status`, { signal: AbortSignal.timeout(3000) })
+    const d = await r.json()
+    cfgServidorOnline = d.online === true
+    const el = document.getElementById('cfg-srv-status')
+    if (el) {
+      el.innerHTML = cfgServidorOnline
+        ? `<span style="color:var(--grn)">● Online</span> <span style="color:var(--muted);font-size:11px;">— próxima coleta: ${(d.proximo_agendamento||'').slice(0,16)}</span>`
+        : `<span style="color:var(--red)">● Offline</span> <span style="color:var(--muted);font-size:11px;">— inicie o server.py no PC</span>`
+    }
+  } catch {
+    cfgServidorOnline = false
+    const el = document.getElementById('cfg-srv-status')
+    if (el) el.innerHTML = `<span style="color:var(--red)">● Offline</span> <span style="color:var(--muted);font-size:11px;">— inicie o server.py no PC</span>`
+  }
+}
+
+// ── Carregar produtos do cliente ───────────────────────────────
+async function cfgCarregarProdutos(clienteId) {
+  cfgClienteAtual = clienteId
+  cfgProdutos = []
+  cfgFiltro = ''
+  const inp = document.getElementById('cfg-prod-busca')
+  if (inp) inp.value = ''
+
+  // Atualizar abas
+  CFG_CLIENTES.forEach(c => {
+    const btn = document.getElementById(`cfg-tab-${c.id}`)
+    if (btn) btn.classList.toggle('cfg-tab-on', c.id === clienteId)
+  })
+
+  const cliente = CFG_CLIENTES.find(c => c.id === clienteId)
+  cfgRenderTabela([])
+  document.getElementById('cfg-prod-loading').style.display = 'flex'
+  document.getElementById('cfg-prod-empty').style.display = 'none'
+
+  try {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/${cliente.tabela}?select=*&order=cod_garden.asc&limit=2000`, { headers: HEADERS })
+    cfgProdutos = await r.json()
+    document.getElementById('cfg-prod-loading').style.display = 'none'
+    cfgRenderTabela(cfgProdutos)
+  } catch(e) {
+    document.getElementById('cfg-prod-loading').style.display = 'none'
+    document.getElementById('cfg-prod-empty').style.display = 'block'
+    document.getElementById('cfg-prod-empty').textContent = 'Erro ao carregar: ' + e.message
+  }
+}
+
+// ── Render tabela de produtos ──────────────────────────────────
+function cfgRenderTabela(lista) {
+  const q = cfgFiltro.toLowerCase()
+  const filtrada = q ? lista.filter(p =>
+    Object.values(p).some(v => v && String(v).toLowerCase().includes(q))
+  ) : lista
+
+  const cliente = CFG_CLIENTES.find(c => c.id === cfgClienteAtual)
+  const cols = cliente.colunas
+
+  document.getElementById('cfg-prod-count').textContent = `${filtrada.length} produto${filtrada.length !== 1 ? 's' : ''}`
+
+  if (!filtrada.length) {
+    document.getElementById('cfg-prod-empty').style.display = 'block'
+    document.getElementById('cfg-prod-empty').textContent = q ? 'Nenhum produto encontrado para essa busca.' : 'Nenhum produto cadastrado.'
+    document.getElementById('cfg-tbl-wrap').style.display = 'none'
+    return
+  }
+  document.getElementById('cfg-prod-empty').style.display = 'none'
+  document.getElementById('cfg-tbl-wrap').style.display = 'block'
+
+  const thead = `<tr>${cols.map(c => `<th style="padding:8px 10px;background:var(--bg3);border-bottom:1px solid var(--bord2);text-align:left;font-size:11px;color:var(--muted);white-space:nowrap">${c}</th>`).join('')}<th style="padding:8px 10px;background:var(--bg3);border-bottom:1px solid var(--bord2);width:50px"></th></tr>`
+
+  const tbody = filtrada.map(p => {
+    const cod = p.cod_garden
+    const tds = cols.map(c => `<td style="padding:7px 10px;border-bottom:1px solid var(--bord);font-size:12px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(String(p[c]||''))}">${esc(String(p[c]||'—'))}</td>`).join('')
+    return `<tr class="cfg-tbl-row">
+      ${tds}
+      <td style="padding:4px 6px;border-bottom:1px solid var(--bord);text-align:center">
+        <button onclick="cfgRemoverProduto('${esc(cod)}')" title="Remover" style="background:none;border:none;cursor:pointer;color:var(--red);font-size:15px;padding:2px 6px;border-radius:4px" onmouseover="this.style.background='rgba(240,82,82,.15)'" onmouseout="this.style.background='none'">✕</button>
+      </td>
+    </tr>`
+  }).join('')
+
+  document.getElementById('cfg-tbl-head').innerHTML = thead
+  document.getElementById('cfg-tbl-body').innerHTML = tbody
+}
+
+// ── Adicionar produto ──────────────────────────────────────────
+async function cfgAdicionarProduto() {
+  const cliente = CFG_CLIENTES.find(c => c.id === cfgClienteAtual)
+  const cols = cliente.colunas
+  const valores = {}
+  let temErro = false
+
+  cols.forEach(col => {
+    const el = document.getElementById(`cfg-add-${col}`)
+    if (el) valores[col] = el.value.trim() || null
+  })
+
+  if (!valores.cod_garden) {
+    cfgToast('⚠️ Código Garden é obrigatório', 'amb')
+    return
+  }
+
+  try {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/${cliente.tabela}`, {
+      method: 'POST',
+      headers: { ...HEADERS, 'Content-Type': 'application/json', 'Prefer': 'resolution=merge-duplicates' },
+      body: JSON.stringify(valores)
+    })
+    if (!r.ok) throw new Error(`HTTP ${r.status}`)
+    cfgToast('✅ Produto adicionado!', 'grn')
+    // Limpar campos
+    cols.forEach(col => { const el = document.getElementById(`cfg-add-${col}`); if(el) el.value = '' })
+    cfgCarregarProdutos(cfgClienteAtual)
+  } catch(e) {
+    cfgToast('❌ Erro: ' + e.message, 'red')
+  }
+}
+
+// ── Remover produto ────────────────────────────────────────────
+async function cfgRemoverProduto(cod) {
+  if (!confirm(`Remover o produto "${cod}" de ${CFG_CLIENTES.find(c=>c.id===cfgClienteAtual).nome}?`)) return
+  const cliente = CFG_CLIENTES.find(c => c.id === cfgClienteAtual)
+  try {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/${cliente.tabela}?cod_garden=eq.${encodeURIComponent(cod)}`, {
+      method: 'DELETE',
+      headers: HEADERS
+    })
+    if (!r.ok) throw new Error(`HTTP ${r.status}`)
+    cfgToast('🗑️ Produto removido', 'red')
+    cfgCarregarProdutos(cfgClienteAtual)
+  } catch(e) {
+    cfgToast('❌ Erro: ' + e.message, 'red')
+  }
+}
+
+// ── Disparar coleta ────────────────────────────────────────────
+async function cfgColetar(clienteId) {
+  if (!cfgServidorOnline) {
+    cfgToast('⚠️ Servidor offline. Inicie o server.py no PC.', 'amb')
+    return
+  }
+  if (cfgColetando) {
+    cfgToast('⚠️ Já há uma coleta em andamento.', 'amb')
+    return
+  }
+  cfgColetando = clienteId
+  const btn = document.getElementById(`cfg-btn-coletar-${clienteId}`)
+  if (btn) { btn.disabled = true; btn.textContent = '⏳ Coletando...' }
+
+  cfgAbrirLog(clienteId)
+
+  try {
+    await fetch(`${SERVER_URL}/api/coletar/${clienteId}`, { method: 'POST' })
+    cfgToast(`🚀 Coleta de ${clienteId} iniciada!`, 'grn')
+    cfgLogInterval = setInterval(() => cfgAtualizarLog(clienteId), 2000)
+  } catch(e) {
+    cfgToast('❌ Erro ao disparar coleta: ' + e.message, 'red')
+    cfgColetando = null
+    if (btn) { btn.disabled = false; btn.textContent = '▶ Coletar agora' }
+  }
+}
+
+function cfgAbrirLog(clienteId) {
+  const box = document.getElementById('cfg-log-box')
+  const title = document.getElementById('cfg-log-title')
+  const nome = CFG_CLIENTES.find(c=>c.id===clienteId)?.nome || clienteId
+  if (title) title.textContent = `Log — ${nome}`
+  if (box) { box.style.display = 'block'; box.innerHTML = '<div style="color:var(--muted);padding:10px">Aguardando log...</div>' }
+}
+
+async function cfgAtualizarLog(clienteId) {
+  try {
+    const r = await fetch(`${SERVER_URL}/api/log/${clienteId}`)
+    const d = await r.json()
+    const box = document.getElementById('cfg-log-box')
+    if (box) {
+      box.innerHTML = (d.log||[]).map(l =>
+        `<div style="font-size:11px;padding:1px 0;color:${l.includes('❌')?'var(--red)':l.includes('✅')?'var(--grn)':'var(--text)'}">${esc(l)}</div>`
+      ).join('') || '<div style="color:var(--muted)">Sem log ainda...</div>'
+      box.scrollTop = box.scrollHeight
+    }
+    if (!d.rodando && cfgColetando === clienteId) {
+      clearInterval(cfgLogInterval)
+      cfgColetando = null
+      const btn = document.getElementById(`cfg-btn-coletar-${clienteId}`)
+      if (btn) { btn.disabled = false; btn.textContent = '▶ Coletar agora' }
+      cfgToast(d.ultimo_ok ? '✅ Coleta concluída!' : '❌ Coleta encerrada com erro', d.ultimo_ok ? 'grn' : 'red')
+    }
+  } catch {}
+}
+
+// ── Toast ──────────────────────────────────────────────────────
+function cfgToast(msg, tipo) {
+  const cores = { grn: '#22c47d', red: '#f05252', amb: '#f0a030' }
+  const t = document.createElement('div')
+  t.textContent = msg
+  t.style.cssText = `position:fixed;bottom:28px;right:28px;background:var(--bg3);border:1px solid ${cores[tipo]||'var(--bord2)'};color:var(--text);padding:12px 20px;border-radius:10px;font-size:13px;z-index:9999;box-shadow:0 4px 20px #0006;transition:opacity .4s`
+  document.body.appendChild(t)
+  setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 400) }, 3500)
+}
+
+// ── Render HTML da aba Config ──────────────────────────────────
+function cfgRenderSecao() {
+  const sec = document.getElementById('cfg-section')
+  if (!sec) return
+
+  const cliente = CFG_CLIENTES.find(c => c.id === cfgClienteAtual)
+
+  // Abas de clientes
+  const tabs = CFG_CLIENTES.map(c => `
+    <button id="cfg-tab-${c.id}" onclick="cfgCarregarProdutos('${c.id}')"
+      class="cfg-tab${c.id === cfgClienteAtual ? ' cfg-tab-on' : ''}"
+      style="--cfg-cor:${c.cor}">
+      ${c.icone} ${c.nome}
+    </button>`).join('')
+
+  // Botões de coleta por cliente
+  const botoes = CFG_CLIENTES.map(c => `
+    <button id="cfg-btn-coletar-${c.id}" onclick="cfgColetar('${c.id}')"
+      style="background:var(--bg3);border:1px solid var(--bord2);color:var(--text);padding:7px 14px;border-radius:8px;cursor:pointer;font-size:12px;display:flex;align-items:center;gap:6px;transition:all .15s"
+      onmouseover="this.style.borderColor='${c.cor}';this.style.color='${c.cor}'"
+      onmouseout="this.style.borderColor='var(--bord2)';this.style.color='var(--text)'">
+      <span style="color:${c.cor}">${c.icone}</span> ${c.nome}
+    </button>`).join('')
+
+  // Formulário de adição com campos do cliente atual
+  const campos = cliente.colunas.map(col => `
+    <div style="display:flex;flex-direction:column;gap:3px">
+      <label style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px">${col}${col==='cod_garden'?' *':''}</label>
+      <input id="cfg-add-${col}" placeholder="${col}" style="background:var(--bg2);border:1px solid var(--bord2);border-radius:6px;padding:6px 10px;color:var(--text);font-size:12px;outline:none;width:100%" onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='var(--bord2)'">
+    </div>`).join('')
+
+  sec.innerHTML = `
+    <div style="padding:20px 28px;max-width:1400px;margin:0 auto">
+
+      <!-- Status do servidor -->
+      <div style="background:var(--bg1);border:1px solid var(--bord);border-radius:12px;padding:14px 20px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
+        <div>
+          <div style="font-size:12px;color:var(--muted);margin-bottom:4px">SERVIDOR LOCAL</div>
+          <div id="cfg-srv-status" style="font-size:13px;font-weight:600">Verificando...</div>
+        </div>
+        <button onclick="cfgCheckServidor()" style="background:var(--bg3);border:1px solid var(--bord2);color:var(--muted);padding:6px 14px;border-radius:8px;cursor:pointer;font-size:12px">🔄 Verificar</button>
+      </div>
+
+      <!-- Disparar coleta -->
+      <div style="background:var(--bg1);border:1px solid var(--bord);border-radius:12px;padding:16px 20px;margin-bottom:18px">
+        <div style="font-size:12px;color:var(--muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px">▶ Disparar Coleta</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          ${botoes}
+          <button onclick="cfgColetar('todos')"
+            style="background:var(--bg3);border:1px solid var(--pur);color:var(--pur);padding:7px 14px;border-radius:8px;cursor:pointer;font-size:12px;display:flex;align-items:center;gap:6px"
+            onmouseover="this.style.background='rgba(168,85,247,.1)'" onmouseout="this.style.background='var(--bg3)'">
+            🚀 Coletar Todos
+          </button>
+        </div>
+        <!-- Log box -->
+        <div style="margin-top:14px">
+          <div id="cfg-log-title" style="font-size:11px;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">Log de coleta</div>
+          <div id="cfg-log-box" style="display:none;background:var(--bg0);border:1px solid var(--bord);border-radius:8px;padding:12px;max-height:200px;overflow-y:auto;font-family:monospace"></div>
+        </div>
+      </div>
+
+      <!-- Produtos monitorados -->
+      <div style="background:var(--bg1);border:1px solid var(--bord);border-radius:12px;padding:16px 20px">
+        <div style="font-size:12px;color:var(--muted);margin-bottom:14px;text-transform:uppercase;letter-spacing:.5px">📋 Produtos Monitorados</div>
+
+        <!-- Abas de clientes -->
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px">
+          ${tabs}
+        </div>
+
+        <!-- Barra de busca + contagem -->
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <input id="cfg-prod-busca" placeholder="🔍 Buscar produto..." oninput="cfgFiltro=this.value;cfgRenderTabela(cfgProdutos)"
+            style="flex:1;background:var(--bg2);border:1px solid var(--bord2);border-radius:8px;padding:7px 12px;color:var(--text);font-size:13px;outline:none"
+            onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='var(--bord2)'">
+          <span id="cfg-prod-count" style="font-size:12px;color:var(--muted);white-space:nowrap"></span>
+        </div>
+
+        <!-- Loading / Empty -->
+        <div id="cfg-prod-loading" style="display:none;justify-content:center;padding:30px;color:var(--muted);font-size:13px">⏳ Carregando...</div>
+        <div id="cfg-prod-empty" style="display:none;text-align:center;padding:30px;color:var(--muted);font-size:13px"></div>
+
+        <!-- Tabela -->
+        <div id="cfg-tbl-wrap" style="overflow-x:auto;border-radius:8px;border:1px solid var(--bord)">
+          <table style="width:100%;border-collapse:collapse">
+            <thead id="cfg-tbl-head"></thead>
+            <tbody id="cfg-tbl-body"></tbody>
+          </table>
+        </div>
+
+        <!-- Formulário adicionar -->
+        <div style="margin-top:18px;background:var(--bg2);border:1px solid var(--bord2);border-radius:10px;padding:16px">
+          <div style="font-size:12px;color:var(--muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px">➕ Adicionar Produto</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:12px">
+            ${campos}
+          </div>
+          <button onclick="cfgAdicionarProduto()" style="background:var(--blue);border:none;color:#fff;padding:8px 20px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600"
+            onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+            ➕ Adicionar
+          </button>
+        </div>
+      </div>
+    </div>
+  `
+
+  cfgCheckServidor()
+  cfgCarregarProdutos(cfgClienteAtual)
+}
+
 // ── Init ───────────────────────────────────────────────────────
 setMode('normal')
 </script>
+
+<style>
+.cfg-tab {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--bord2);
+  background: var(--bg2);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .15s;
+}
+.cfg-tab:hover { color: var(--text); border-color: var(--cfg-cor, var(--blue)); }
+.cfg-tab.cfg-tab-on { background: var(--cfg-cor, var(--blue)); border-color: var(--cfg-cor, var(--blue)); color: #fff; }
+.cfg-tbl-row:hover td { background: var(--bg3); }
+</style>
 
 
 </body></html>
